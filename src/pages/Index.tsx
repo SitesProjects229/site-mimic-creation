@@ -4,6 +4,12 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import Icon from '@/components/ui/icon';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion';
 
 const Index = () => {
   const [email, setEmail] = useState('');
@@ -1045,6 +1051,109 @@ const Index = () => {
               <span className="text-sm font-semibold">Only 47 spots remaining at this bonus level!</span>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="py-20 px-6 bg-white">
+        <div className="container mx-auto max-w-4xl">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 border border-blue-200 rounded-full mb-6">
+              <Icon name="HelpCircle" size={18} style={{ color: '#4A90E2' }} />
+              <span className="text-sm font-semibold" style={{ color: '#4A90E2' }}>FREQUENTLY ASKED</span>
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-bold mb-4" style={{ color: '#5B6B8C' }}>
+              FAQ
+            </h2>
+            <p className="text-lg text-gray-600">
+              Everything you need to know about Envariax
+            </p>
+          </div>
+
+          <Accordion type="single" collapsible className="space-y-4">
+            <AccordionItem value="item-1" className="bg-gray-50 border border-gray-200 rounded-2xl px-6 py-2">
+              <AccordionTrigger className="hover:no-underline">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center flex-shrink-0">
+                    <span className="text-lg font-bold" style={{ color: '#4A90E2' }}>01</span>
+                  </div>
+                  <span className="text-lg font-semibold text-gray-900 text-left">What Is Envariax and How Does It Work?</span>
+                </div>
+              </AccordionTrigger>
+              <AccordionContent className="pl-16 pr-4 pb-4 text-gray-600 leading-relaxed">
+                Envariax is an AI-powered trading platform that uses advanced algorithms to analyze market trends, predict opportunities, and execute trades automatically. Our system combines machine learning with real-time data processing to help you make informed trading decisions with minimal manual intervention.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-2" className="bg-gray-50 border border-gray-200 rounded-2xl px-6 py-2">
+              <AccordionTrigger className="hover:no-underline">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center flex-shrink-0">
+                    <span className="text-lg font-bold" style={{ color: '#4A90E2' }}>02</span>
+                  </div>
+                  <span className="text-lg font-semibold text-gray-900 text-left">Why Do Investors Choose Platform Over Other Systems?</span>
+                </div>
+              </AccordionTrigger>
+              <AccordionContent className="pl-16 pr-4 pb-4 text-gray-600 leading-relaxed">
+                Envariax stands out with its predictive AI intelligence that sees market movements before they happen, military-grade security protecting every transaction, 24/7 global expert support, and ultra-fast execution that never misses an opportunity. We combine cutting-edge technology with proven reliability.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-3" className="bg-gray-50 border border-gray-200 rounded-2xl px-6 py-2">
+              <AccordionTrigger className="hover:no-underline">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center flex-shrink-0">
+                    <span className="text-lg font-bold" style={{ color: '#4A90E2' }}>03</span>
+                  </div>
+                  <span className="text-lg font-semibold text-gray-900 text-left">How Does Envariax Protect My Data and Assets?</span>
+                </div>
+              </AccordionTrigger>
+              <AccordionContent className="pl-16 pr-4 pb-4 text-gray-600 leading-relaxed">
+                We employ quantum-grade AES-XS20 encryption, distributed cold vault storage keeping 97.8% of assets offline, multi-layer biometric authentication (2FA + Bio-ID), autonomous AI security monitoring with 99.999% uptime, and maintain full compliance with SOC 2, ISO/IEC 27001, PCI DSS, and GDPR standards. Your security is our foundation.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-4" className="bg-gray-50 border border-gray-200 rounded-2xl px-6 py-2">
+              <AccordionTrigger className="hover:no-underline">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center flex-shrink-0">
+                    <span className="text-lg font-bold" style={{ color: '#4A90E2' }}>04</span>
+                  </div>
+                  <span className="text-lg font-semibold text-gray-900 text-left">Is Platform Suitable for Beginners?</span>
+                </div>
+              </AccordionTrigger>
+              <AccordionContent className="pl-16 pr-4 pb-4 text-gray-600 leading-relaxed">
+                Absolutely! Envariax is designed for both beginners and experienced traders. Our AI handles the complex analytics and technical execution, while you maintain full control over your strategy. We provide educational resources, demo accounts, and 24/7 multilingual support to help you get started confidently.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-5" className="bg-gray-50 border border-gray-200 rounded-2xl px-6 py-2">
+              <AccordionTrigger className="hover:no-underline">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center flex-shrink-0">
+                    <span className="text-lg font-bold" style={{ color: '#4A90E2' }}>05</span>
+                  </div>
+                  <span className="text-lg font-semibold text-gray-900 text-left">Does Envariax Support Both Short- and Long-Term Strategies?</span>
+                </div>
+              </AccordionTrigger>
+              <AccordionContent className="pl-16 pr-4 pb-4 text-gray-600 leading-relaxed">
+                Yes! Our platform is flexible enough to accommodate day traders executing hundreds of quick trades and long-term investors building wealth over years. The AI adapts to your chosen strategy, risk tolerance, and investment timeline, providing relevant insights and execution speed for any approach.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-6" className="bg-gray-50 border border-gray-200 rounded-2xl px-6 py-2">
+              <AccordionTrigger className="hover:no-underline">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center flex-shrink-0">
+                    <span className="text-lg font-bold" style={{ color: '#4A90E2' }}>06</span>
+                  </div>
+                  <span className="text-lg font-semibold text-gray-900 text-left">What Kind of Analytics Does Platform Provide?</span>
+                </div>
+              </AccordionTrigger>
+              <AccordionContent className="pl-16 pr-4 pb-4 text-gray-600 leading-relaxed">
+                Envariax provides comprehensive real-time analytics including market trend predictions, risk assessment scores, portfolio performance tracking, trade execution history, profit/loss analysis, and AI-powered opportunity alerts. Our dashboard gives you full transparency with intuitive visualizations and detailed reporting tools.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </div>
       </section>
 
