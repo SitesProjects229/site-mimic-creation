@@ -8,5 +8,11 @@ export const useTranslation = (lang: LanguageCode) => {
 export const languages = [
   { countryCode: 'US', code: 'en', name: 'English' },
   { countryCode: 'DE', code: 'de', name: 'Deutsch' },
-  { countryCode: 'SE', code: 'sv', name: 'Svenska' }
+  { countryCode: 'SE', code: 'sv', name: 'Svenska' },
+  { countryCode: 'NO', code: 'no', name: 'Norsk' },
+  { countryCode: 'JP', code: 'ja', name: '日本語' },
+  { countryCode: 'KR', code: 'ko', name: '한국어' },
+  { countryCode: 'IT', code: 'it', name: 'Italiano' },
+  { countryCode: 'FR', code: 'fr', name: 'Français' },
+  { countryCode: 'MX', code: 'es', name: 'Español' }
 ] as const;
