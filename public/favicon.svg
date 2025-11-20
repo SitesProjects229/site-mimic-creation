@@ -6,8 +6,8 @@
       }
     </style>
   </defs>
-  <rect width="512" height="512" fill="transparent"/>
-  <g transform="translate(56, 56) scale(0.78)">
+  <rect width="512" height="512" fill="#1a1a1a"/>
+  <g transform="translate(106, 106) scale(1.15)">
     <path class="logo-fill" d="M 53 16 L 53 134 L 148 233 L 53 233 L 53 280 L 274 280 L 274 162 L 179 63 L 274 63 L 274 16 Z"/>
     <path class="logo-fill" d="M 274 16 L 274 134 L 179 233 L 274 233 L 274 280 L 53 280 L 53 162 L 148 63 L 53 63 L 53 16 Z"/>
     <path class="logo-fill" d="M 135 122 L 135 174 L 192 174 L 192 122 Z"/>
