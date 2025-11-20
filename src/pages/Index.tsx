@@ -295,6 +295,87 @@ const Index = () => {
         </div>
       </section>
 
+      <section className="py-20 px-6 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white border-2 border-blue-200 rounded-full mb-6">
+              <Icon name="Eye" size={18} style={{ color: '#4A90E2' }} />
+              <span className="text-sm font-semibold" style={{ color: '#4A90E2' }}>EXPERT TRADERS</span>
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-bold mb-4" style={{ color: '#5B6B8C' }}>
+              Live Trading Stream
+            </h2>
+            <p className="text-lg text-gray-600">
+              Real-Time Market Insights Powered by Adaptive AI
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <Card className="bg-white border-none shadow-xl hover:shadow-2xl transition-shadow">
+              <CardContent className="p-8">
+                <div className="flex items-start gap-4 mb-6">
+                  <img
+                    src="https://cdn.poehali.dev/projects/dec2b247-100c-4952-8c09-827ed14bdcb9/files/deeaeda7-1d69-4f4f-8ea0-8811be3c7906.jpg"
+                    alt="Ethan Morales"
+                    className="w-16 h-16 rounded-full object-cover"
+                  />
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-gray-900">Ethan Morales</h3>
+                    <p className="text-sm text-gray-600 mb-3">Chief Quantitative Architect</p>
+                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-green-100 rounded-full">
+                      <Icon name="Sparkles" size={14} className="text-green-600" />
+                      <span className="text-xs font-semibold text-green-700">AI Market Systems Engineer | Verified</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6 rounded">
+                  <p className="text-gray-700 italic leading-relaxed">
+                    Envariax completely redefined how I interpret market flow. Its predictive intelligence reacts in microseconds — transforming volatility into calculated precision and measurable growth.
+                  </p>
+                </div>
+
+                <Button className="w-full h-12 bg-blue-600 hover:bg-blue-700 text-white font-semibold">
+                  Start Trading
+                  <Icon name="ArrowRight" size={18} className="ml-2" />
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white border-none shadow-xl hover:shadow-2xl transition-shadow">
+              <CardContent className="p-8">
+                <div className="flex items-start gap-4 mb-6">
+                  <img
+                    src="https://cdn.poehali.dev/projects/dec2b247-100c-4952-8c09-827ed14bdcb9/files/f00d8a1f-3001-4171-94a5-1ea939052c45.jpg"
+                    alt="Amelia Kwon"
+                    className="w-16 h-16 rounded-full object-cover"
+                  />
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-gray-900">Amelia Kwon</h3>
+                    <p className="text-sm text-gray-600 mb-3">Director of Global Asset Strategies</p>
+                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-green-100 rounded-full">
+                      <Icon name="Sparkles" size={14} className="text-green-600" />
+                      <span className="text-xs font-semibold text-green-700">Data-Driven Investment Analyst | Verified</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6 rounded">
+                  <p className="text-gray-700 italic leading-relaxed">
+                    No platform matches the consistency of Envariax. Every trade executes with algorithmic intent, fluid precision, and a level of stability that reshapes high-speed investing.
+                  </p>
+                </div>
+
+                <Button className="w-full h-12 bg-blue-600 hover:bg-blue-700 text-white font-semibold">
+                  Start Trading
+                  <Icon name="ArrowRight" size={18} className="ml-2" />
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       <section id="about" className="py-20 px-6 bg-card">
         <div className="container mx-auto">
           <div className="max-w-3xl mx-auto text-center mb-16">
