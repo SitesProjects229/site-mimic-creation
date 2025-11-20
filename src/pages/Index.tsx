@@ -10,6 +10,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
+import { useTranslation, languages } from '@/useTranslation';
+import type { LanguageCode } from '@/translations';
 
 const Index = () => {
   const [email, setEmail] = useState('');
@@ -23,7 +25,8 @@ const Index = () => {
   
   const [timeLeft, setTimeLeft] = useState({ days: 1, hours: 23, minutes: 24, seconds: 35 });
   const [selectedOffice, setSelectedOffice] = useState(0);
-  const [selectedLanguage, setSelectedLanguage] = useState({ countryCode: 'US', name: 'English' });
+  const [selectedLanguage, setSelectedLanguage] = useState<LanguageCode>('en');
+  const { t } = useTranslation(selectedLanguage);
   const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState({ countryCode: 'US', code: '+1', name: 'United States' });
   const [isCountryDropdownOpen, setIsCountryDropdownOpen] = useState(false);
@@ -343,8 +346,8 @@ const Index = () => {
             </div>
             
             <div className="hidden md:flex items-center space-x-8">
-              <a href="#home" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">Home</a>
-              <button onClick={scrollToFAQ} className="text-gray-700 hover:text-blue-600 transition-colors font-medium">FAQ</button>
+              <a href="#home" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">{t.nav.home}</a>
+              <button onClick={scrollToFAQ} className="text-gray-700 hover:text-blue-600 transition-colors font-medium">{t.nav.faq}</button>
             </div>
 
             <div className="flex items-center gap-4">
@@ -354,34 +357,21 @@ const Index = () => {
                   className="flex items-center gap-2 px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors"
                 >
                   <img 
-                    src={`https://flagcdn.com/24x18/${selectedLanguage.countryCode.toLowerCase()}.png`}
-                    alt={selectedLanguage.name}
+                    src={`https://flagcdn.com/24x18/${languages.find(l => l.code === selectedLanguage)?.countryCode.toLowerCase()}.png`}
+                    alt={languages.find(l => l.code === selectedLanguage)?.name}
                     className="w-6 h-4 object-cover rounded"
                   />
-                  <span className="font-medium">{selectedLanguage.name}</span>
+                  <span className="font-medium">{languages.find(l => l.code === selectedLanguage)?.name}</span>
                   <Icon name="ChevronDown" size={16} />
                 </button>
                 
                 {isLangDropdownOpen && (
                   <div className="absolute top-full right-0 mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-200 overflow-hidden max-h-96 overflow-y-auto z-50">
-                    {[
-                      { countryCode: 'US', name: 'English' },
-                      { countryCode: 'DE', name: 'Deutsch' },
-                      { countryCode: 'SE', name: 'Svenska' },
-                      { countryCode: 'AT', name: 'Deutsch' },
-                      { countryCode: 'NO', name: 'Norsk' },
-                      { countryCode: 'IT', name: 'Italiano' },
-                      { countryCode: 'IN', name: 'हिंदी' },
-                      { countryCode: 'ES', name: 'Español' },
-                      { countryCode: 'KR', name: '한국어' },
-                      { countryCode: 'JP', name: '日本語' },
-                      { countryCode: 'FR', name: 'Français' },
-                      { countryCode: 'CH', name: 'Schweizerdeutsch' },
-                    ].map((lang, index) => (
+                    {languages.map((lang, index) => (
                       <button
                         key={index}
                         onClick={() => {
-                          setSelectedLanguage(lang);
+                          setSelectedLanguage(lang.code as LanguageCode);
                           setIsLangDropdownOpen(false);
                         }}
                         className="w-full flex items-center gap-3 px-4 py-3 hover:bg-blue-50 transition-colors text-left"
@@ -399,7 +389,7 @@ const Index = () => {
               </div>
 
               <Button onClick={scrollToForm} className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 rounded-lg">
-                GET STARTED
+                {t.nav.getStarted}
               </Button>
             </div>
           </div>
