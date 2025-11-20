@@ -273,6 +273,20 @@ const Index = () => {
     return () => clearInterval(timer);
   }, []);
 
+  const scrollToForm = () => {
+    const formSection = document.getElementById('join-form');
+    if (formSection) {
+      formSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  const scrollToFAQ = () => {
+    const faqSection = document.getElementById('faq');
+    if (faqSection) {
+      faqSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Form submitted:', { name, email, message });
@@ -330,7 +344,7 @@ const Index = () => {
             
             <div className="hidden md:flex items-center space-x-8">
               <a href="#home" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">Home</a>
-              <a href="#faq" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">FAQ</a>
+              <button onClick={scrollToFAQ} className="text-gray-700 hover:text-blue-600 transition-colors font-medium">FAQ</button>
             </div>
 
             <div className="flex items-center gap-4">
@@ -370,7 +384,7 @@ const Index = () => {
                 )}
               </div>
 
-              <Button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 rounded-lg">
+              <Button onClick={scrollToForm} className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 rounded-lg">
                 GET STARTED
               </Button>
             </div>
@@ -409,7 +423,7 @@ const Index = () => {
               </Card>
             </div>
 
-            <Card className="bg-white/95 backdrop-blur-sm border-none shadow-2xl">
+            <Card id="join-form" className="bg-white/95 backdrop-blur-sm border-none shadow-2xl">
               <CardContent className="p-8">
                 <h2 className="text-2xl font-bold text-center mb-6">Join Exclusive Access</h2>
                 
@@ -616,6 +630,7 @@ const Index = () => {
 
               <Button 
                 size="lg" 
+                onClick={scrollToForm}
                 className="mt-6 bg-white text-gray-900 border-2 border-gray-900 hover:bg-gray-50"
               >
                 <Icon name="Play" size={18} className="mr-2" />
@@ -721,7 +736,7 @@ const Index = () => {
                   </p>
                 </div>
 
-                <Button className="w-full h-12 bg-blue-600 hover:bg-blue-700 text-white font-semibold">
+                <Button onClick={scrollToForm} className="w-full h-12 bg-blue-600 hover:bg-blue-700 text-white font-semibold">
                   Start Trading
                   <Icon name="ArrowRight" size={18} className="ml-2" />
                 </Button>
@@ -752,7 +767,7 @@ const Index = () => {
                   </p>
                 </div>
 
-                <Button className="w-full h-12 bg-blue-600 hover:bg-blue-700 text-white font-semibold">
+                <Button onClick={scrollToForm} className="w-full h-12 bg-blue-600 hover:bg-blue-700 text-white font-semibold">
                   Start Trading
                   <Icon name="ArrowRight" size={18} className="ml-2" />
                 </Button>
@@ -837,7 +852,7 @@ const Index = () => {
             <p className="text-lg text-gray-700 mb-8 max-w-3xl mx-auto">
               Ready to go beyond boundaries? Experience unmatched speed, accuracy, and reliability with Envariax — where autonomous intelligence drives every trade.
             </p>
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 h-14 text-lg font-semibold">
+            <Button size="lg" onClick={scrollToForm} className="bg-blue-600 hover:bg-blue-700 text-white px-8 h-14 text-lg font-semibold">
               GET STARTED NOW
               <Icon name="Rocket" size={20} className="ml-2" />
             </Button>
@@ -1136,7 +1151,7 @@ const Index = () => {
             <p className="text-lg text-gray-700 mb-8 max-w-3xl mx-auto">
               Join thousands of investors worldwide who trust Envariax to automate, analyze, and elevate their digital success.
             </p>
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 h-14 text-lg font-semibold">
+            <Button size="lg" onClick={scrollToForm} className="bg-blue-600 hover:bg-blue-700 text-white px-8 h-14 text-lg font-semibold">
               JOIN NOW
               <Icon name="Rocket" size={20} className="ml-2" />
             </Button>
@@ -1326,7 +1341,7 @@ const Index = () => {
             <p className="text-lg text-gray-700 mb-8 max-w-3xl mx-auto">
               Start trading with unmatched security and intelligence
             </p>
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 h-14 text-lg font-semibold">
+            <Button size="lg" onClick={scrollToForm} className="bg-blue-600 hover:bg-blue-700 text-white px-8 h-14 text-lg font-semibold">
               GET STARTED SECURELY
               <Icon name="Shield" size={20} className="ml-2" />
             </Button>
@@ -1388,7 +1403,7 @@ const Index = () => {
           </div>
 
           <div className="text-center">
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-10 h-14 text-lg font-semibold mb-4">
+            <Button size="lg" onClick={scrollToForm} className="bg-blue-600 hover:bg-blue-700 text-white px-10 h-14 text-lg font-semibold mb-4">
               <Icon name="Zap" size={20} className="mr-2" />
               CLAIM YOUR BONUS NOW
             </Button>
@@ -1400,7 +1415,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-white">
+      <section id="faq" className="py-20 px-6 bg-white">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 border border-blue-200 rounded-full mb-6">
