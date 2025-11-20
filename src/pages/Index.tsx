@@ -376,6 +376,89 @@ const Index = () => {
         </div>
       </section>
 
+      <section className="py-20 px-6 bg-white">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 border border-blue-200 rounded-full mb-6">
+              <Icon name="Star" size={18} style={{ color: '#4A90E2' }} />
+              <span className="text-sm font-semibold" style={{ color: '#4A90E2' }}>TRUSTED PLATFORM</span>
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6" style={{ color: '#5B6B8C' }}>
+              How Envariax Is Redefining the Future of Smart Trading?
+            </h2>
+            <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Step beyond conventional trading boundaries — Envariax unveils a fully adaptive, AI-orchestrated financial environment built for precision, scalability, and complete control across every digital transaction. This isn't just progress — it's intelligent evolution at maximum velocity.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            <Card className="bg-gradient-to-br from-blue-50 to-white border-none shadow-lg hover:shadow-xl transition-all">
+              <CardContent className="p-8">
+                <div className="w-20 h-20 rounded-full bg-blue-100 flex items-center justify-center mb-6 mx-auto">
+                  <Icon name="MapPin" size={36} style={{ color: '#4A90E2' }} />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">
+                  AI-Powered Market Cognition
+                </h3>
+                <p className="text-gray-600 leading-relaxed mb-6 text-center">
+                  At the core of Envariax lies a continuously evolving analytical engine — designed to interpret volatility patterns, forecast directional trends, and uncover emerging profit windows before they materialize. Trade with algorithmic precision powered by intelligence that learns, adapts, and sharpens with every market pulse.
+                </p>
+                <Button variant="outline" className="w-full text-blue-600 border-blue-200 hover:bg-blue-50">
+                  Learn More
+                  <Icon name="ArrowRight" size={16} className="ml-2" />
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-gradient-to-br from-blue-50 to-white border-none shadow-lg hover:shadow-xl transition-all">
+              <CardContent className="p-8">
+                <div className="w-20 h-20 rounded-full bg-blue-100 flex items-center justify-center mb-6 mx-auto">
+                  <Icon name="Shield" size={36} style={{ color: '#4A90E2' }} />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">
+                  Fortified Multi-Layer Security Architecture
+                </h3>
+                <p className="text-gray-600 leading-relaxed mb-6 text-center">
+                  Your capital deserves resilience without compromise. Envariax integrates a multi-level cryptographic defense system enhanced with biometric validation and real-time threat monitoring. Its proactive defense layer identifies anomalies before they escalate — ensuring unwavering institutional-grade protection 24/7.
+                </p>
+                <Button variant="outline" className="w-full text-blue-600 border-blue-200 hover:bg-blue-50">
+                  Learn More
+                  <Icon name="ArrowRight" size={16} className="ml-2" />
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-gradient-to-br from-blue-50 to-white border-none shadow-lg hover:shadow-xl transition-all">
+              <CardContent className="p-8">
+                <div className="w-20 h-20 rounded-full bg-blue-100 flex items-center justify-center mb-6 mx-auto">
+                  <Icon name="Rocket" size={36} style={{ color: '#4A90E2' }} />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">
+                  Ultra-Speed Execution Framework
+                </h3>
+                <p className="text-gray-600 leading-relaxed mb-6 text-center">
+                  In the world of trading, milliseconds define opportunity. Envariax operates on an ultra-responsive, low-latency infrastructure that synchronizes liquidity, accelerates execution, and ensures immediate order fulfillment. When timing meets intelligence, every move becomes a strategic advantage.
+                </p>
+                <Button variant="outline" className="w-full text-blue-600 border-blue-200 hover:bg-blue-50">
+                  Learn More
+                  <Icon name="ArrowRight" size={16} className="ml-2" />
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="text-center">
+            <p className="text-lg text-gray-700 mb-8 max-w-3xl mx-auto">
+              Ready to go beyond boundaries? Experience unmatched speed, accuracy, and reliability with Envariax — where autonomous intelligence drives every trade.
+            </p>
+            <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 h-14 text-lg font-semibold">
+              GET STARTED NOW
+              <Icon name="Rocket" size={20} className="ml-2" />
+            </Button>
+          </div>
+        </div>
+      </section>
+
       <section id="about" className="py-20 px-6 bg-card">
         <div className="container mx-auto">
           <div className="max-w-3xl mx-auto text-center mb-16">
