@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -12,6 +12,40 @@ const Index = () => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [phone, setPhone] = useState('');
+  
+  const [timeLeft, setTimeLeft] = useState({ days: 1, hours: 23, minutes: 24, seconds: 35 });
+
+  useEffect(() => {
+    const getOrCreateEndTime = () => {
+      const stored = localStorage.getItem('envariax_offer_end');
+      if (stored) {
+        return parseInt(stored);
+      }
+      const endTime = Date.now() + (1 * 24 * 60 * 60 * 1000) + (23 * 60 * 60 * 1000) + (24 * 60 * 1000) + (35 * 1000);
+      localStorage.setItem('envariax_offer_end', endTime.toString());
+      return endTime;
+    };
+
+    const endTime = getOrCreateEndTime();
+
+    const timer = setInterval(() => {
+      const now = Date.now();
+      const difference = endTime - now;
+
+      if (difference > 0) {
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((difference / 1000 / 60) % 60);
+        const seconds = Math.floor((difference / 1000) % 60);
+        setTimeLeft({ days, hours, minutes, seconds });
+      } else {
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+        clearInterval(timer);
+      }
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -944,6 +978,72 @@ const Index = () => {
               GET STARTED SECURELY
               <Icon name="Shield" size={20} className="ml-2" />
             </Button>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 px-6 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
+        <div className="container mx-auto max-w-5xl">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white border-2 border-blue-300 rounded-full mb-6">
+              <Icon name="Clock" size={18} style={{ color: '#4A90E2' }} />
+              <span className="text-sm font-semibold" style={{ color: '#4A90E2' }}>LIMITED TIME OFFER</span>
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6" style={{ color: '#5B6B8C' }}>
+              Join Before This Exclusive Offer Ends
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Start your Envariax trading journey with exclusive bonuses available only for new members
+            </p>
+          </div>
+
+          <div className="flex justify-center items-center gap-4 mb-10">
+            <Card className="bg-white border-none shadow-xl w-28 h-28 flex items-center justify-center">
+              <CardContent className="p-0 text-center">
+                <div className="text-5xl font-bold" style={{ color: '#4A90E2' }}>
+                  {timeLeft.days.toString().padStart(2, '0')}
+                </div>
+                <div className="text-xs text-gray-500 uppercase mt-2">Days</div>
+              </CardContent>
+            </Card>
+            <div className="text-3xl font-bold text-gray-400">:</div>
+            <Card className="bg-white border-none shadow-xl w-28 h-28 flex items-center justify-center">
+              <CardContent className="p-0 text-center">
+                <div className="text-5xl font-bold" style={{ color: '#4A90E2' }}>
+                  {timeLeft.hours.toString().padStart(2, '0')}
+                </div>
+                <div className="text-xs text-gray-500 uppercase mt-2">Hours</div>
+              </CardContent>
+            </Card>
+            <div className="text-3xl font-bold text-gray-400">:</div>
+            <Card className="bg-white border-none shadow-xl w-28 h-28 flex items-center justify-center">
+              <CardContent className="p-0 text-center">
+                <div className="text-5xl font-bold" style={{ color: '#4A90E2' }}>
+                  {timeLeft.minutes.toString().padStart(2, '0')}
+                </div>
+                <div className="text-xs text-gray-500 uppercase mt-2">Minutes</div>
+              </CardContent>
+            </Card>
+            <div className="text-3xl font-bold text-gray-400">:</div>
+            <Card className="bg-white border-none shadow-xl w-28 h-28 flex items-center justify-center">
+              <CardContent className="p-0 text-center">
+                <div className="text-5xl font-bold" style={{ color: '#4A90E2' }}>
+                  {timeLeft.seconds.toString().padStart(2, '0')}
+                </div>
+                <div className="text-xs text-gray-500 uppercase mt-2">Seconds</div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="text-center">
+            <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-10 h-14 text-lg font-semibold mb-4">
+              <Icon name="Zap" size={20} className="mr-2" />
+              CLAIM YOUR BONUS NOW
+            </Button>
+            <div className="flex items-center justify-center gap-2 text-orange-600">
+              <Icon name="AlertTriangle" size={18} />
+              <span className="text-sm font-semibold">Only 47 spots remaining at this bonus level!</span>
+            </div>
           </div>
         </div>
       </section>
