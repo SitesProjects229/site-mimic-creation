@@ -336,13 +336,15 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted">
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
-        <div className="container mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
+        <div className="container mx-auto px-4 md:px-6 py-3 md:py-4">
+          <div className="flex items-center justify-between gap-2">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 rounded flex items-center justify-center">
-                <span className="text-2xl">💎</span>
-              </div>
-              <span className="text-xl font-bold text-gray-900">Envariax</span>
+              <img 
+                src="https://cdn.poehali.dev/files/204f6091-1497-458b-9605-6b56e10eecb0.png"
+                alt="Envariax Logo"
+                className="w-7 h-7 md:w-8 md:h-8 object-contain"
+              />
+              <span className="text-lg md:text-xl font-bold text-gray-900">Envariax</span>
             </div>
             
             <div className="hidden md:flex items-center space-x-8">
@@ -350,19 +352,19 @@ const Index = () => {
               <button onClick={scrollToFAQ} className="text-gray-700 hover:text-blue-600 transition-colors font-medium">{t.nav.faq}</button>
             </div>
 
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2 md:gap-4">
               <div className="relative">
                 <button
                   onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
-                  className="flex items-center gap-2 px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors"
+                  className="flex items-center gap-1 md:gap-2 px-2 md:px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors"
                 >
                   <img 
                     src={`https://flagcdn.com/24x18/${languages.find(l => l.code === selectedLanguage)?.countryCode.toLowerCase()}.png`}
                     alt={languages.find(l => l.code === selectedLanguage)?.name}
-                    className="w-6 h-4 object-cover rounded"
+                    className="w-5 h-4 md:w-6 md:h-4 object-cover rounded"
                   />
-                  <span className="font-medium">{languages.find(l => l.code === selectedLanguage)?.name}</span>
-                  <Icon name="ChevronDown" size={16} />
+                  <span className="font-medium text-sm md:text-base hidden sm:inline">{languages.find(l => l.code === selectedLanguage)?.name}</span>
+                  <Icon name="ChevronDown" size={14} className="md:w-4 md:h-4" />
                 </button>
                 
                 {isLangDropdownOpen && (
@@ -388,7 +390,7 @@ const Index = () => {
                 )}
               </div>
 
-              <Button onClick={scrollToForm} className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 rounded-lg">
+              <Button onClick={scrollToForm} className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-3 md:px-6 py-2 rounded-lg text-sm md:text-base whitespace-nowrap">
                 {t.nav.getStarted}
               </Button>
             </div>
