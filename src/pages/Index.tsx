@@ -20,6 +20,172 @@ const Index = () => {
   const [phone, setPhone] = useState('');
   
   const [timeLeft, setTimeLeft] = useState({ days: 1, hours: 23, minutes: 24, seconds: 35 });
+  const [selectedOffice, setSelectedOffice] = useState(0);
+
+  const offices = [
+    {
+      name: 'Global Headquarters',
+      city: 'Washington, DC, USA',
+      address: 'Easy Offices, 1200 G Street, NW, Suite 800, 20005',
+      hours: 'Mon-Fri: 9AM-6PM EST',
+      staff: '250+ Staff',
+      phone: '+1 (469) 868 4562',
+      coordinates: { lat: 38.8977, lng: -77.0365 }
+    },
+    {
+      name: 'Ireland Office',
+      city: 'Dublin, Ireland',
+      address: 'Lis Cara Business Centre, Fitzwilliam Square, Dublin 2',
+      hours: 'Mon-Fri: 9AM-6PM GMT',
+      staff: '150+ Staff',
+      phone: '+353 1 231 4600',
+      coordinates: { lat: 53.3376, lng: -6.2522 }
+    },
+    {
+      name: 'United Kingdom Office',
+      city: 'London, United Kingdom',
+      address: 'The London Office, 167-169 Great Portland Street, 5th Floor, London W1W 5PF',
+      hours: 'Mon-Fri: 9AM-6PM GMT',
+      staff: '100+ Staff',
+      phone: '+44 (0) 20 7183 3787',
+      coordinates: { lat: 51.5224, lng: -0.1420 }
+    },
+    {
+      name: 'Germany Office',
+      city: 'Berlin, Germany',
+      address: 'Alexanderstraße 3-7, 10117 Berlin',
+      hours: 'Mon-Fri: 9AM-6PM CET',
+      staff: '100+ Staff',
+      phone: '+49 30 7001 4820',
+      coordinates: { lat: 52.5228, lng: 13.4124 }
+    },
+    {
+      name: 'France Office',
+      city: 'Paris, France',
+      address: 'Business Centre 10 Rue de la Paix, 10 Rue de la Paix, 75002 Paris',
+      hours: 'Mon-Fri: 9AM-6PM CET',
+      staff: '75+ Staff',
+      phone: '+33 1 45 67 89 10',
+      coordinates: { lat: 48.8692, lng: 2.3317 }
+    },
+    {
+      name: 'Spain Office',
+      city: 'Barcelona, Spain',
+      address: 'Vivendi Business Center, C/ de París 45-47, 08029 Barcelona',
+      hours: 'Mon-Fri: 9AM-6PM CET',
+      staff: '80+ Staff',
+      phone: '+34 931 602 555',
+      coordinates: { lat: 41.3936, lng: 2.1464 }
+    },
+    {
+      name: 'Italy Office',
+      city: 'Rome, Italy',
+      address: 'Eur Business District, Viale Europa, 39, 00144 Rome',
+      hours: 'Mon-Fri: 9AM-6PM CET',
+      staff: '70+ Staff',
+      phone: '+39 06 594 7101',
+      coordinates: { lat: 41.8338, lng: 12.4738 }
+    },
+    {
+      name: 'Netherlands Office',
+      city: 'Amsterdam, Netherlands',
+      address: 'ESC Amsterdam, Keizersgracht 62-64, 1015 CS Amsterdam',
+      hours: 'Mon-Fri: 9AM-6PM CET',
+      staff: '60+ Staff',
+      phone: '+31 (0)20 520 7000',
+      coordinates: { lat: 52.3738, lng: 4.8910 }
+    },
+    {
+      name: 'Norway Office',
+      city: 'Oslo, Norway',
+      address: 'Regus C.J. Hambros Plass 2C, C.J. Hambros Plass 2C, 0164 Oslo',
+      hours: 'Mon-Fri: 9AM-6PM CET',
+      staff: '40+ Staff',
+      phone: '+47 22 99 60 00',
+      coordinates: { lat: 59.9127, lng: 10.7461 }
+    },
+    {
+      name: 'Switzerland Office',
+      city: 'Zurich, Switzerland',
+      address: 'Regus Business Center Zurich Bahnhofstrasse, Bahnhofstrasse 98/100, 8001 Zürich',
+      hours: 'Mon-Fri: 9AM-6PM CET',
+      staff: '35+ Staff',
+      phone: '+064 562 70 70',
+      coordinates: { lat: 47.3769, lng: 8.5417 }
+    },
+    {
+      name: 'Austria Office',
+      city: 'Vienna, Austria',
+      address: 'Green Business Center Wien GmbH, Liebenstraße 122, 1110 Wien',
+      hours: 'Mon-Fri: 9AM-6PM CET',
+      staff: '60+ Staff',
+      phone: '+0800 400 41',
+      coordinates: { lat: 48.2082, lng: 16.3738 }
+    },
+    {
+      name: 'Malaysia Office',
+      city: 'Kuala Lumpur, Malaysia',
+      address: 'Plaza Sentral Business Centre, Level 15, Block 1B, Plaza Sentral, Jalan Stesen Sentral 5, 50470 Kuala Lumpur',
+      hours: 'Mon-Fri: 9AM-6PM MYT',
+      staff: '120+ Staff',
+      phone: '+60 3 9236 1111',
+      coordinates: { lat: 3.1337, lng: 101.6869 }
+    },
+    {
+      name: 'Japan Office',
+      city: 'Tokyo, Japan',
+      address: 'Business Development Center TOKYO, 2-7-2 Marunouchi, Chiyoda-ku, Tokyo 100-7020',
+      hours: 'Mon-Fri: 9AM-6PM JST',
+      staff: '90+ Staff',
+      phone: '+81-3-6269-9981',
+      coordinates: { lat: 35.6812, lng: 139.7671 }
+    },
+    {
+      name: 'Korea Office',
+      city: 'Seoul, South Korea',
+      address: 'The Offices Seoul – Yeouido District, Yeouido District',
+      hours: 'Mon-Fri: 9AM-6PM KST',
+      staff: '65+ Staff',
+      phone: '+82 2 3784 5000',
+      coordinates: { lat: 37.5219, lng: 126.9245 }
+    },
+    {
+      name: 'India Office',
+      city: 'New Delhi, India',
+      address: 'World Trade Center, Babar Road, Connaught Place, New Delhi',
+      hours: 'Mon-Fri: 9AM-6PM IST',
+      staff: '85+ Staff',
+      phone: '+91 11 41307979',
+      coordinates: { lat: 28.6289, lng: 77.2065 }
+    },
+    {
+      name: 'Australia Office',
+      city: 'Melbourne, Australia',
+      address: 'Melbourne Business Centre, Ground Floor 470 St Kilda Road, Melbourne VIC 3004',
+      hours: 'Mon-Fri: 9AM-6PM AEDT',
+      staff: '55+ Staff',
+      phone: '+1800 181 182',
+      coordinates: { lat: -37.8497, lng: 144.9789 }
+    },
+    {
+      name: 'Canada Office',
+      city: 'Toronto, Canada',
+      address: 'The Professional Centre – Business Centre, 120 Adelaide St W, Suite 2500, Toronto ON M5H 1T1',
+      hours: 'Mon-Fri: 9AM-6PM EST',
+      staff: '45+ Staff',
+      phone: '+1 416 367-1055',
+      coordinates: { lat: 43.6532, lng: -79.3832 }
+    },
+    {
+      name: 'Russia Office',
+      city: 'Moscow, Russia',
+      address: 'Moscow, Presnenskaya embankment st., 6, DC Moscow City',
+      hours: 'Mon-Fri: 9AM-6PM MSK',
+      staff: '50+ Staff',
+      phone: '+495 748 50 52',
+      coordinates: { lat: 55.7490, lng: 37.5388 }
+    }
+  ];
 
   useEffect(() => {
     const getOrCreateEndTime = () => {
@@ -1154,6 +1320,105 @@ const Index = () => {
               </AccordionContent>
             </AccordionItem>
           </Accordion>
+        </div>
+      </section>
+
+      <section className="py-20 px-6 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div className="container mx-auto max-w-7xl">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-blue-200 rounded-full mb-6">
+              <Icon name="Globe" size={18} style={{ color: '#4A90E2' }} />
+              <span className="text-sm font-semibold" style={{ color: '#4A90E2' }}>GLOBAL TRADING NETWORK</span>
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-bold mb-4" style={{ color: '#5B6B8C' }}>
+              Global Presence
+            </h2>
+            <p className="text-lg text-gray-600">
+              Operating in major financial centers worldwide
+            </p>
+          </div>
+
+          <Card className="bg-white border-none shadow-xl mb-8 overflow-hidden">
+            <CardContent className="p-0">
+              <div className="relative h-96 bg-gray-100">
+                <iframe
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  loading="lazy"
+                  allowFullScreen
+                  src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=${offices[selectedOffice].coordinates.lat},${offices[selectedOffice].coordinates.lng}&zoom=13`}
+                />
+                <div className="absolute top-4 left-4 bg-white rounded-lg shadow-lg p-4 max-w-sm">
+                  <div className="flex items-start gap-3">
+                    <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
+                      <Icon name="MapPin" size={20} style={{ color: '#4A90E2' }} />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-gray-900 mb-1">{offices[selectedOffice].name}</h3>
+                      <p className="text-sm text-gray-600 mb-2">{offices[selectedOffice].city}</p>
+                      <p className="text-xs text-gray-500">{offices[selectedOffice].address}</p>
+                      <a 
+                        href="#" 
+                        className="text-xs text-blue-600 hover:underline mt-2 inline-block"
+                        onClick={(e) => e.preventDefault()}
+                      >
+                        View larger map
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {offices.map((office, index) => (
+              <Card 
+                key={index}
+                className={`cursor-pointer transition-all duration-300 hover:shadow-xl ${
+                  selectedOffice === index 
+                    ? 'bg-blue-50 border-2 border-blue-400' 
+                    : 'bg-white border border-gray-200 hover:border-blue-300'
+                }`}
+                onClick={() => setSelectedOffice(index)}
+              >
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-3 mb-4">
+                    <div className={`w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 ${
+                      selectedOffice === index ? 'bg-blue-500' : 'bg-blue-100'
+                    }`}>
+                      <Icon 
+                        name="MapPin" 
+                        size={20} 
+                        className={selectedOffice === index ? 'text-white' : 'text-blue-600'}
+                      />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="font-bold text-gray-900 mb-1">{office.name}</h3>
+                      <p className="text-sm text-gray-500">{office.city}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-3 text-sm">
+                    <p className="text-gray-600 leading-relaxed">{office.address}</p>
+                    <p className="text-gray-500">{office.hours}</p>
+                    
+                    <div className="flex items-center gap-4 pt-2 border-t border-gray-200">
+                      <div className="flex items-center gap-1 text-gray-600">
+                        <Icon name="Users" size={14} />
+                        <span className="text-xs">{office.staff}</span>
+                      </div>
+                      <div className="flex items-center gap-1 text-gray-600">
+                        <Icon name="Phone" size={14} />
+                        <span className="text-xs">{office.phone}</span>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
 
