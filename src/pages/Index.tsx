@@ -18,6 +18,8 @@ const Index = () => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [phone, setPhone] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState('');
   
   const [timeLeft, setTimeLeft] = useState({ days: 1, hours: 23, minutes: 24, seconds: 35 });
   const [selectedOffice, setSelectedOffice] = useState(0);
@@ -276,9 +278,42 @@ const Index = () => {
     console.log('Form submitted:', { name, email, message });
   };
 
-  const handleJoinSubmit = (e: React.FormEvent) => {
+  const handleJoinSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Join form submitted:', { firstName, lastName, email, phone });
+    setIsSubmitting(true);
+    setSubmitMessage('');
+
+    try {
+      const response = await fetch('https://functions.poehali.dev/cd2bcaff-b8c8-4c3e-b0e7-6ad1796e1cf4', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          firstName,
+          lastName,
+          email,
+          phone,
+          countryCode: selectedCountry.code
+        })
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmitMessage('✅ Application submitted successfully! We will contact you soon.');
+        setFirstName('');
+        setLastName('');
+        setEmail('');
+        setPhone('');
+      } else {
+        setSubmitMessage('❌ ' + (data.error || 'Failed to submit application. Please try again.'));
+      }
+    } catch (error) {
+      setSubmitMessage('❌ Network error. Please check your connection and try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -473,11 +508,21 @@ const Index = () => {
                       />
                     </div>
                   </div>
+                  {submitMessage && (
+                    <div className={`p-4 rounded-lg text-center font-medium ${
+                      submitMessage.includes('✅') 
+                        ? 'bg-green-50 text-green-700 border border-green-200' 
+                        : 'bg-red-50 text-red-700 border border-red-200'
+                    }`}>
+                      {submitMessage}
+                    </div>
+                  )}
                   <Button 
                     type="submit" 
-                    className="w-full h-14 text-lg font-semibold bg-gradient-to-r from-blue-500 via-purple-500 to-orange-400 hover:opacity-90 border-none"
+                    disabled={isSubmitting}
+                    className="w-full h-14 text-lg font-semibold bg-gradient-to-r from-blue-500 via-purple-500 to-orange-400 hover:opacity-90 border-none disabled:opacity-50"
                   >
-                    BEGIN NOW
+                    {isSubmitting ? 'SUBMITTING...' : 'BEGIN NOW'}
                   </Button>
                 </form>
               </CardContent>
