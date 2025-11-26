@@ -15,7 +15,7 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://vorexlan.com/sitemap.xml
+Sitemap: https://vorexlan-official.com/sitemap.xml
 
 # Crawl-delay for respectful bots
 Crawl-delay: 1

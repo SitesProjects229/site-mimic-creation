@@ -1,5 +1,7 @@
 # Vorexlan SEO Optimization Checklist ✅
 
+**Основний домен:** https://vorexlan-official.com
+
 ## Completed SEO Optimizations
 
 ### 1. **Meta Tags & HTML Structure** ✅
