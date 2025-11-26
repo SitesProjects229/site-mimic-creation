@@ -351,10 +351,10 @@ const Index = () => {
             <div className="flex items-center space-x-2">
               <img 
                 src="https://cdn.poehali.dev/files/204f6091-1497-458b-9605-6b56e10eecb0.png"
-                alt="Envariax Logo"
+                alt="Vorexlan Logo"
                 className="w-7 h-7 md:w-8 md:h-8 object-contain"
               />
-              <span className="text-lg md:text-xl font-bold text-gray-900">Envariax</span>
+              <span className="text-lg md:text-xl font-bold text-gray-900">Vorexlan</span>
             </div>
             
             <div className="hidden md:flex items-center space-x-8">
@@ -742,7 +742,7 @@ const Index = () => {
                 
                 <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6 rounded">
                   <p className="text-gray-700 italic leading-relaxed">
-                    Envariax completely redefined how I interpret market flow. Its predictive intelligence reacts in microseconds — transforming volatility into calculated precision and measurable growth.
+                    Vorexlan completely redefined how I interpret market flow. Its predictive intelligence reacts in microseconds — transforming volatility into calculated precision and measurable growth.
                   </p>
                 </div>
 
@@ -773,7 +773,7 @@ const Index = () => {
                 
                 <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6 rounded">
                   <p className="text-gray-700 italic leading-relaxed">
-                    No platform matches the consistency of Envariax. Every trade executes with algorithmic intent, fluid precision, and a level of stability that reshapes high-speed investing.
+                    No platform matches the consistency of Vorexlan. Every trade executes with algorithmic intent, fluid precision, and a level of stability that reshapes high-speed investing.
                   </p>
                 </div>
 
@@ -885,7 +885,7 @@ const Index = () => {
                   </div>
                 </div>
                 <p className="text-gray-700 text-sm mb-4 leading-relaxed">
-                  Envariax finally gave automation the control it was missing. Execution feels seamless, and the AI reacts faster than any manual setup I've ever used.
+                  Vorexlan finally gave automation the control it was missing. Execution feels seamless, and the AI reacts faster than any manual setup I've ever used.
                 </p>
                 <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg p-4 mb-4">
                   <div className="text-xs text-gray-500 mb-1">{t.activeTraders.totalEarnings}</div>
@@ -931,7 +931,7 @@ const Index = () => {
                   </div>
                 </div>
                 <p className="text-gray-700 text-sm mb-4 leading-relaxed">
-                  Precision and prediction — that's what Envariax delivers. Its algorithms catch shifts before the charts even reflect them.
+                  Precision and prediction — that's what Vorexlan delivers. Its algorithms catch shifts before the charts even reflect them.
                 </p>
                 <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg p-4 mb-4">
                   <div className="text-xs text-gray-500 mb-1">{t.activeTraders.totalEarnings}</div>
@@ -977,7 +977,7 @@ const Index = () => {
                   </div>
                 </div>
                 <p className="text-gray-700 text-sm mb-4 leading-relaxed">
-                  Smooth interface, near-zero delay, and intelligence that grows with me. Envariax understands both the data and the trader behind it.
+                  Smooth interface, near-zero delay, and intelligence that grows with me. Vorexlan understands both the data and the trader behind it.
                 </p>
                 <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg p-4 mb-4">
                   <div className="text-xs text-gray-500 mb-1">{t.activeTraders.totalEarnings}</div>
@@ -1023,7 +1023,7 @@ const Index = () => {
                   </div>
                 </div>
                 <p className="text-gray-700 text-sm mb-4 leading-relaxed">
-                  The automation feels effortless, and the results speak for themselves. Envariax helped me stabilize my portfolio week after week.
+                  The automation feels effortless, and the results speak for themselves. Vorexlan helped me stabilize my portfolio week after week.
                 </p>
                 <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg p-4 mb-4">
                   <div className="text-xs text-gray-500 mb-1">{t.activeTraders.totalEarnings}</div>
@@ -1068,7 +1068,7 @@ const Index = () => {
                   </div>
                 </div>
                 <p className="text-gray-700 text-sm mb-4 leading-relaxed">
-                  Professional design, instant execution, and accuracy that feels surgical. Envariax is built for traders who demand reliability.
+                  Professional design, instant execution, and accuracy that feels surgical. Vorexlan is built for traders who demand reliability.
                 </p>
                 <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg p-4 mb-4">
                   <div className="text-xs text-gray-500 mb-1">{t.activeTraders.totalEarnings}</div>
@@ -1114,7 +1114,7 @@ const Index = () => {
                   </div>
                 </div>
                 <p className="text-gray-700 text-sm mb-4 leading-relaxed">
-                  Finally, a platform that merges data transparency with real performance. Envariax delivers measurable consistency and absolute trust.
+                  Finally, a platform that merges data transparency with real performance. Vorexlan delivers measurable consistency and absolute trust.
                 </p>
                 <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg p-4 mb-4">
                   <div className="text-xs text-gray-500 mb-1">{t.activeTraders.totalEarnings}</div>
@@ -1176,7 +1176,7 @@ const Index = () => {
                   Quantum-Grade Encryption Framework
                 </h3>
                 <p className="text-gray-600 text-sm mb-6 leading-relaxed">
-                  Every Envariax operation runs under next-generation AES-XS20 encryption, delivering absolute confidentiality, zero exposure, and unbreakable transaction integrity.
+                  Every Vorexlan operation runs under next-generation AES-XS20 encryption, delivering absolute confidentiality, zero exposure, and unbreakable transaction integrity.
                 </p>
                 <div className="px-4 py-2 bg-blue-100 rounded-full text-sm font-semibold text-blue-700">
                   AES-XS20
@@ -1210,7 +1210,7 @@ const Index = () => {
                   Multi-Layer Bio-Identity Verification
                 </h3>
                 <p className="text-gray-600 text-sm mb-6 leading-relaxed">
-                  Envariax integrates biometric validation, adaptive 2FA, and behavioral signature tracking, ensuring airtight account protection on every login and transaction.
+                  Vorexlan integrates biometric validation, adaptive 2FA, and behavioral signature tracking, ensuring airtight account protection on every login and transaction.
                 </p>
                 <div className="px-4 py-2 bg-blue-100 rounded-full text-sm font-semibold text-blue-700">
                   2FA + BIO-ID
@@ -1227,7 +1227,7 @@ const Index = () => {
                   Autonomous AI Security Grid
                 </h3>
                 <p className="text-gray-600 text-sm mb-6 leading-relaxed">
-                  Powered by self-learning defense nodes, Envariax anticipates and neutralizes threats in real time — maintaining 99.999% uptime across all environments through predictive resilience algorithms.
+                  Powered by self-learning defense nodes, Vorexlan anticipates and neutralizes threats in real time — maintaining 99.999% uptime across all environments through predictive resilience algorithms.
                 </p>
                 <div className="px-4 py-2 bg-blue-100 rounded-full text-sm font-semibold text-blue-700">
                   99.999% UPTIME
@@ -1261,7 +1261,7 @@ const Index = () => {
                   Global Asset Protection Reserve
                 </h3>
                 <p className="text-gray-600 text-sm mb-6 leading-relaxed">
-                  Envariax upholds a $210 million protection fund designed to safeguard investors from volatility disruptions, systemic anomalies, or unforeseen macroeconomic shocks.
+                  Vorexlan upholds a $210 million protection fund designed to safeguard investors from volatility disruptions, systemic anomalies, or unforeseen macroeconomic shocks.
                 </p>
                 <div className="px-4 py-2 bg-blue-100 rounded-full text-sm font-semibold text-blue-700">
                   $210M RESERVE
@@ -1587,7 +1587,7 @@ const Index = () => {
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
                 <span className="text-2xl">💎</span>
-                <span className="text-2xl font-bold">Envariax</span>
+                <span className="text-2xl font-bold">Vorexlan</span>
               </div>
               <p className="text-gray-400 leading-relaxed">
                 {t.footer.description}
