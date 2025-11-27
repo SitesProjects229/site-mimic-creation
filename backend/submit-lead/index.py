@@ -44,10 +44,7 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
     phone = body_data.get('phone', '')
     country_code = body_data.get('countryCode', '')
     country_name = body_data.get('countryName', '')
-    
-    request_context = event.get('requestContext', {})
-    identity = request_context.get('identity', {})
-    ip_address = identity.get('sourceIp', 'Unknown')
+    ip_address = body_data.get('ipAddress', 'Unknown')
     
     if not all([first_name, last_name, email, phone, country_name]):
         return {

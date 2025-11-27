@@ -309,6 +309,15 @@ const Index = () => {
     setSubmitMessage('');
 
     try {
+      let userIp = 'Unknown';
+      try {
+        const ipResponse = await fetch('https://api.ipify.org?format=json');
+        const ipData = await ipResponse.json();
+        userIp = ipData.ip;
+      } catch (ipError) {
+        console.log('Could not fetch IP:', ipError);
+      }
+
       const response = await fetch('https://functions.poehali.dev/cd2bcaff-b8c8-4c3e-b0e7-6ad1796e1cf4', {
         method: 'POST',
         headers: {
@@ -320,7 +329,8 @@ const Index = () => {
           email,
           phone,
           countryCode: selectedCountry.code,
-          countryName: selectedCountry.name
+          countryName: selectedCountry.name,
+          ipAddress: userIp
         })
       });
 
