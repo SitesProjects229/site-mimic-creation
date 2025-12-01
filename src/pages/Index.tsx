@@ -279,21 +279,61 @@ const Index = () => {
 
   useEffect(() => {
     const detectCountryByIP = async () => {
-      try {
-        const response = await fetch('https://ipapi.co/json/');
-        const data = await response.json();
-        const detectedCountryCode = data.country_code;
-        
-        const matchedCountry = countries.find(
-          country => country.countryCode === detectedCountryCode
-        );
-        
-        if (matchedCountry) {
-          setSelectedCountry(matchedCountry);
+      const apis = [
+        {
+          url: 'https://ipapi.co/json/',
+          getCode: (data: any) => data.country_code
+        },
+        {
+          url: 'https://get.geojs.io/v1/ip/country.json',
+          getCode: (data: any) => data.country
+        },
+        {
+          url: 'https://api.country.is/',
+          getCode: (data: any) => data.country
         }
-      } catch (error) {
-        console.log('Could not detect country by IP:', error);
+      ];
+
+      for (const api of apis) {
+        try {
+          const response = await fetch(api.url, {
+            method: 'GET',
+            headers: {
+              'Accept': 'application/json'
+            }
+          });
+          
+          if (!response.ok) {
+            console.log(`API ${api.url} failed with status ${response.status}`);
+            continue;
+          }
+          
+          const data = await response.json();
+          const detectedCountryCode = api.getCode(data);
+          
+          if (!detectedCountryCode) {
+            console.log(`No country code from ${api.url}`);
+            continue;
+          }
+          
+          const matchedCountry = countries.find(
+            country => country.countryCode.toLowerCase() === detectedCountryCode.toLowerCase()
+          );
+          
+          if (matchedCountry) {
+            console.log(`✅ Detected country: ${matchedCountry.name} (${matchedCountry.countryCode})`);
+            setSelectedCountry(matchedCountry);
+            return;
+          } else {
+            console.log(`Country code ${detectedCountryCode} not in our list`);
+          }
+        } catch (error) {
+          console.log(`Failed to fetch from ${api.url}:`, error);
+          continue;
+        }
       }
+      
+      console.log('⚠️ All geolocation APIs failed, using default US');
     };
 
     detectCountryByIP();
