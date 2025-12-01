@@ -1,10 +1,10 @@
-# 🔍 Інструкція: Налаштування Google Search Console для vorexlan-official.com
+# 🔍 Інструкція: Налаштування Google Search Console для iroxivor-official.com
 
 ## Крок 1: Реєстрація сайту в Google Search Console
 
 1. Перейдіть на https://search.google.com/search-console
 2. Натисніть "Додати ресурс" (Add Property)
-3. Виберіть "Префікс URL" та введіть: `https://vorexlan-official.com`
+3. Виберіть "Префікс URL" та введіть: `https://iroxivor-official.com`
 4. Підтвердіть власність сайту (один з методів):
    - **HTML-файл** (найпростіший): завантажте файл верифікації на сервер
    - **HTML-тег**: додайте мета-тег до `<head>` секції index.html
@@ -18,7 +18,7 @@
 Після підтвердження власності:
 
 1. У боковому меню виберіть **"Sitemaps"** (Карти сайту)
-2. Введіть URL карти сайту: `https://vorexlan-official.com/sitemap.xml`
+2. Введіть URL карти сайту: `https://iroxivor-official.com/sitemap.xml`
 3. Натисніть **"Відправити"** (Submit)
 
 Google почне індексувати ваш сайт протягом 1-3 днів.
@@ -28,11 +28,11 @@ Google почне індексувати ваш сайт протягом 1-3 д
 ## Крок 3: Перевірка індексації
 
 1. У Search Console перейдіть до розділу **"URL Inspection"** (Перевірка URL)
-2. Введіть: `https://vorexlan-official.com/`
+2. Введіть: `https://iroxivor-official.com/`
 3. Натисніть **"Запросити індексацію"** (Request Indexing)
 4. Повторіть для важливих сторінок:
-   - `https://vorexlan-official.com/#home`
-   - `https://vorexlan-official.com/#faq`
+   - `https://iroxivor-official.com/#home`
+   - `https://iroxivor-official.com/#faq`
 
 ---
 
@@ -41,9 +41,9 @@ Google почне індексувати ваш сайт протягом 1-3 д
 Аналогічно для Bing:
 
 1. Перейдіть на https://www.bing.com/webmasters
-2. Додайте сайт: `https://vorexlan-official.com`
+2. Додайте сайт: `https://iroxivor-official.com`
 3. Підтвердіть власність
-4. Подайте sitemap: `https://vorexlan-official.com/sitemap.xml`
+4. Подайте sitemap: `https://iroxivor-official.com/sitemap.xml`
 
 ---
 
@@ -52,23 +52,23 @@ Google почне індексувати ваш сайт протягом 1-3 д
 У Google Search Console відстежуйте позиції за ключовими словами:
 
 ### Цільові ключові слова:
-- **Vorexlan** (головний брендовий запит)
-- **Vorexlan official** (офіційний сайт)
-- **Vorexlan platform** (платформа)
-- **Vorexlan trading** (торгівля)
+- **Iroxivor** (головний брендовий запит)
+- **Iroxivor official** (офіційний сайт)
+- **Iroxivor platform** (платформа)
+- **Iroxivor trading** (торгівля)
 - **AI trading platform** (загальний запит)
-- **Vorexlan official website**
-- **vorexlan-official.com**
+- **Iroxivor official website**
+- **iroxivor-official.com**
 
 ### Очікувані результати через 2-4 тижні:
 
 | Ключове слово | Очікувана позиція | Конкуренція |
 |--------------|-------------------|-------------|
-| Vorexlan | 1-3 | Низька (брендовий) |
-| Vorexlan official | 1-2 | Низька (брендовий) |
-| vorexlan-official.com | 1 | Відсутня (прямий URL) |
-| Vorexlan platform | 1-5 | Низька |
-| Vorexlan trading | 1-10 | Середня |
+| Iroxivor | 1-3 | Низька (брендовий) |
+| Iroxivor official | 1-2 | Низька (брендовий) |
+| iroxivor-official.com | 1 | Відсутня (прямий URL) |
+| Iroxivor platform | 1-5 | Низька |
+| Iroxivor trading | 1-10 | Середня |
 | AI trading platform | 50-100 | Висока (загальний) |
 
 ---
@@ -77,20 +77,20 @@ Google почне індексувати ваш сайт протягом 1-3 д
 
 ### А. Створення Google Business Profile (якщо є офіс)
 1. https://business.google.com
-2. Додайте бізнес "Vorexlan"
+2. Додайте бізнес "Iroxivor"
 3. Вкажіть категорію: "Financial Services" або "Investment Service"
-4. Додайте той самий URL: `https://vorexlan-official.com`
+4. Додайте той самий URL: `https://iroxivor-official.com`
 
 ### Б. Соціальні мережі
 Створіть профілі (посилання вже додані в structured data):
-- Twitter: @vorexlan → https://twitter.com/vorexlan
-- Facebook: facebook.com/vorexlan
-- LinkedIn: linkedin.com/company/vorexlan
+- Twitter: @iroxivor → https://twitter.com/iroxivor
+- Facebook: facebook.com/iroxivor
+- LinkedIn: linkedin.com/company/iroxivor
 
-Переконайтеся, що **всі профілі посилаються на vorexlan-official.com**
+Переконайтеся, що **всі профілі посилаються на iroxivor-official.com**
 
 ### В. Backlinks (зворотні посилання)
-Додайте посилання на vorexlan-official.com на:
+Додайте посилання на iroxivor-official.com на:
 - Фінансові каталоги (Trustpilot, Capterra)
 - Криптовалютні форуми (Reddit r/cryptocurrency, BitcoinTalk)
 - Торгові спільноти
@@ -103,15 +103,15 @@ Google почне індексувати ваш сайт протягом 1-3 д
 ### Через 1 тиждень:
 ```bash
 # У Google введіть:
-site:vorexlan-official.com
+site:iroxivor-official.com
 ```
 Перевірте, чи індексуються сторінки.
 
 ### Через 2-4 тижні:
 ```bash
 # У Google/Bing введіть:
-Vorexlan
-Vorexlan official
+Iroxivor
+Iroxivor official
 ```
 Ваш сайт має бути в топ-3 результатах.
 
@@ -128,9 +128,9 @@ Vorexlan official
   - FAQPage
   - SoftwareApplication
   - Brand
-- ✅ Canonical URL: `https://vorexlan-official.com/`
+- ✅ Canonical URL: `https://iroxivor-official.com/`
 - ✅ Open Graph теги для соцмереж
-- ✅ Ключові слова "Vorexlan" + "official" ~40+ разів на сторінці
+- ✅ Ключові слова "Iroxivor" + "official" ~40+ разів на сторінці
 
 ---
 

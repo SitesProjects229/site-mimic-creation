@@ -1,4 +1,4 @@
-# Vorexlan Official - robots.txt
+# Iroxivor Official - robots.txt
 User-agent: Googlebot
 Allow: /
 
@@ -15,7 +15,7 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://vorexlan-official.com/sitemap.xml
+Sitemap: https://iroxivor-official.com/sitemap.xml
 
 # Crawl-delay for respectful bots
 Crawl-delay: 1

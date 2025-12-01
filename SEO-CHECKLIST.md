@@ -1,12 +1,12 @@
-# Vorexlan SEO Optimization Checklist ✅
+# Iroxivor SEO Optimization Checklist ✅
 
-**Основний домен:** https://vorexlan-official.com
+**Основний домен:** https://iroxivor-official.com
 
 ## Completed SEO Optimizations
 
 ### 1. **Meta Tags & HTML Structure** ✅
-- [x] Optimized `<title>` tag with "Vorexlan - Official AI-Driven Trading Platform"
-- [x] Enhanced meta description with "Vorexlan" keyword (appeared 3 times)
+- [x] Optimized `<title>` tag with "Iroxivor - Official AI-Driven Trading Platform"
+- [x] Enhanced meta description with "Iroxivor" keyword (appeared 3 times)
 - [x] Added comprehensive meta keywords
 - [x] Added canonical URL
 - [x] Added robots meta tags for Google and Bing
@@ -16,17 +16,17 @@
 - [x] Added language prefix to HTML tag
 
 ### 2. **Structured Data (JSON-LD Schema)** ✅
-- [x] Organization schema with Vorexlan details
+- [x] Organization schema with Iroxivor details
 - [x] WebSite schema with search action
 - [x] FAQPage schema with 4 key questions
 - [x] SoftwareApplication schema with ratings (4.9/5, 12,847 reviews)
 
 ### 3. **Content Optimization** ✅
-- [x] Updated H1 heading: "Vorexlan: Intelligent Trades Executed Globally"
-- [x] Added "Vorexlan" to hero description
-- [x] Updated form title to include "Vorexlan"
+- [x] Updated H1 heading: "Iroxivor: Intelligent Trades Executed Globally"
+- [x] Added "Iroxivor" to hero description
+- [x] Updated form title to include "Iroxivor"
 - [x] Enhanced feature descriptions with brand mentions
-- [x] Updated footer description with "Vorexlan" keyword
+- [x] Updated footer description with "Iroxivor" keyword
 - [x] Optimized alt texts for images (team members, logos)
 
 ### 4. **Technical SEO** ✅
@@ -36,7 +36,7 @@
 - [x] Added image sitemap entries
 
 ### 5. **Keyword Density** ✅
-Keyword "Vorexlan" now appears in:
+Keyword "Iroxivor" now appears in:
 - Page title (2x)
 - Meta description (3x)
 - Meta keywords (5x)
@@ -47,7 +47,7 @@ Keyword "Vorexlan" now appears in:
 - Structured data (10x)
 - Alt texts (4x)
 
-**Total: ~35+ mentions of "Vorexlan" across the page**
+**Total: ~35+ mentions of "Iroxivor" across the page**
 
 ---
 
@@ -55,10 +55,10 @@ Keyword "Vorexlan" now appears in:
 
 ### 1. **Content Marketing**
 - [ ] Create blog section with articles about:
-  - "How Vorexlan AI trading works"
-  - "Vorexlan vs Traditional Trading Platforms"
-  - "Getting Started with Vorexlan"
-- [ ] Add case studies from successful Vorexlan traders
+  - "How Iroxivor AI trading works"
+  - "Iroxivor vs Traditional Trading Platforms"
+  - "Getting Started with Iroxivor"
+- [ ] Add case studies from successful Iroxivor traders
 
 ### 2. **Backlinks & External SEO**
 - [ ] Submit site to Google Search Console
@@ -82,7 +82,7 @@ Keyword "Vorexlan" now appears in:
 ### 5. **User Engagement**
 - [ ] Add trust badges and certifications
 - [ ] Implement live chat support
-- [ ] Add video content explaining Vorexlan features
+- [ ] Add video content explaining Iroxivor features
 - [ ] Create testimonial videos from real users
 
 ### 6. **Technical Improvements**
@@ -108,7 +108,7 @@ Use these tools to track SEO performance:
 ## Expected Results
 
 With current optimizations:
-- ✅ Better visibility in "Vorexlan" searches
+- ✅ Better visibility in "Iroxivor" searches
 - ✅ Improved social media sharing previews
 - ✅ Enhanced search engine understanding of content
 - ✅ Better click-through rates from search results
