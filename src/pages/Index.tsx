@@ -860,7 +860,7 @@ const Index = () => {
                 
                 <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6 rounded">
                   <p className="text-gray-700 italic leading-relaxed">
-                    Iroxivor completely redefined how I interpret market flow. Its predictive intelligence reacts in microseconds — transforming volatility into calculated precision and measurable growth.
+                    Torexian completely redefined how I interpret market flow. Its predictive intelligence reacts in microseconds — transforming volatility into calculated precision and measurable growth.
                   </p>
                 </div>
 
@@ -891,7 +891,7 @@ const Index = () => {
                 
                 <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6 rounded">
                   <p className="text-gray-700 italic leading-relaxed">
-                    No platform matches the consistency of Iroxivor. Every trade executes with algorithmic intent, fluid precision, and a level of stability that reshapes high-speed investing.
+                    No platform matches the consistency of Torexian. Every trade executes with algorithmic intent, fluid precision, and a level of stability that reshapes high-speed investing.
                   </p>
                 </div>
 
@@ -1003,7 +1003,7 @@ const Index = () => {
                   </div>
                 </div>
                 <p className="text-gray-700 text-sm mb-4 leading-relaxed">
-                  Iroxivor finally gave automation the control it was missing. Execution feels seamless, and the AI reacts faster than any manual setup I've ever used.
+                  Torexian finally gave automation the control it was missing. Execution feels seamless, and the AI reacts faster than any manual setup I've ever used.
                 </p>
                 <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg p-4 mb-4">
                   <div className="text-xs text-gray-500 mb-1">{t.activeTraders.totalEarnings}</div>
@@ -1141,7 +1141,7 @@ const Index = () => {
                   </div>
                 </div>
                 <p className="text-gray-700 text-sm mb-4 leading-relaxed">
-                  The automation feels effortless, and the results speak for themselves. Iroxivor helped me stabilize my portfolio week after week.
+                  The automation feels effortless, and the results speak for themselves. Torexian helped me stabilize my portfolio week after week.
                 </p>
                 <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg p-4 mb-4">
                   <div className="text-xs text-gray-500 mb-1">{t.activeTraders.totalEarnings}</div>
@@ -1186,7 +1186,7 @@ const Index = () => {
                   </div>
                 </div>
                 <p className="text-gray-700 text-sm mb-4 leading-relaxed">
-                  Professional design, instant execution, and accuracy that feels surgical. Iroxivor is built for traders who demand reliability.
+                  Professional design, instant execution, and accuracy that feels surgical. Torexian is built for traders who demand reliability.
                 </p>
                 <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg p-4 mb-4">
                   <div className="text-xs text-gray-500 mb-1">{t.activeTraders.totalEarnings}</div>
@@ -1232,7 +1232,7 @@ const Index = () => {
                   </div>
                 </div>
                 <p className="text-gray-700 text-sm mb-4 leading-relaxed">
-                  Finally, a platform that merges data transparency with real performance. Iroxivor delivers measurable consistency and absolute trust.
+                  Finally, a platform that merges data transparency with real performance. Torexian delivers measurable consistency and absolute trust.
                 </p>
                 <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg p-4 mb-4">
                   <div className="text-xs text-gray-500 mb-1">{t.activeTraders.totalEarnings}</div>
