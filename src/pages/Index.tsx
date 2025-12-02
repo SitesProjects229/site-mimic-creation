@@ -423,10 +423,10 @@ const Index = () => {
             <div className="flex items-center space-x-2">
               <img 
                 src="https://cdn.poehali.dev/files/204f6091-1497-458b-9605-6b56e10eecb0.png"
-                alt="Iroxivor Logo"
+                alt="Torexian Logo"
                 className="w-7 h-7 md:w-8 md:h-8 object-contain"
               />
-              <span className="text-lg md:text-xl font-bold text-gray-900">Iroxivor</span>
+              <span className="text-lg md:text-xl font-bold text-gray-900">Torexian</span>
             </div>
             
             <div className="hidden md:flex items-center space-x-8">
@@ -485,7 +485,7 @@ const Index = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div className="space-y-8 animate-fade-in">
               <div className="text-4xl font-bold tracking-wider" style={{ color: '#4A90E2' }}>
-                IROXIVOR
+                TOREXIAN
               </div>
               <h1 className="text-5xl lg:text-6xl font-black leading-tight">
                 {t.hero.title}
@@ -1049,7 +1049,7 @@ const Index = () => {
                   </div>
                 </div>
                 <p className="text-gray-700 text-sm mb-4 leading-relaxed">
-                  Precision and prediction — that's what Iroxivor delivers. Its algorithms catch shifts before the charts even reflect them.
+                  Precision and prediction — that's what Torexian delivers. Its algorithms catch shifts before the charts even reflect them.
                 </p>
                 <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg p-4 mb-4">
                   <div className="text-xs text-gray-500 mb-1">{t.activeTraders.totalEarnings}</div>
@@ -1095,7 +1095,7 @@ const Index = () => {
                   </div>
                 </div>
                 <p className="text-gray-700 text-sm mb-4 leading-relaxed">
-                  Smooth interface, near-zero delay, and intelligence that grows with me. Iroxivor understands both the data and the trader behind it.
+                  Smooth interface, near-zero delay, and intelligence that grows with me. Torexian understands both the data and the trader behind it.
                 </p>
                 <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg p-4 mb-4">
                   <div className="text-xs text-gray-500 mb-1">{t.activeTraders.totalEarnings}</div>
