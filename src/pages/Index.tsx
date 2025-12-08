@@ -860,7 +860,7 @@ const Index = () => {
                 
                 <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6 rounded">
                   <p className="text-gray-700 italic leading-relaxed">
-                    Olutrixon completely redefined how I interpret market flow. Its predictive intelligence reacts in microseconds — transforming volatility into calculated precision and measurable growth.
+                    Olutrixon completely redefined how I interpret market flow. Its predictive intelligence reacts in microseconds - transforming volatility into calculated precision and measurable growth.
                   </p>
                 </div>
 
@@ -1049,7 +1049,7 @@ const Index = () => {
                   </div>
                 </div>
                 <p className="text-gray-700 text-sm mb-4 leading-relaxed">
-                  Precision and prediction — that's what Olutrixon delivers. Its algorithms catch shifts before the charts even reflect them.
+                  Precision and prediction - that's what Olutrixon delivers. Its algorithms catch shifts before the charts even reflect them.
                 </p>
                 <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg p-4 mb-4">
                   <div className="text-xs text-gray-500 mb-1">{t.activeTraders.totalEarnings}</div>
@@ -1311,7 +1311,7 @@ const Index = () => {
                   Distributed Cold Vault Infrastructure
                 </h3>
                 <p className="text-gray-600 text-sm mb-6 leading-relaxed">
-                  Over 97.8% of user assets are secured in multi-layer offline storage — geographically segmented and fully isolated from online access points.
+                  Over 97.8% of user assets are secured in multi-layer offline storage - geographically segmented and fully isolated from online access points.
                 </p>
                 <div className="px-4 py-2 bg-blue-100 rounded-full text-sm font-semibold text-blue-700">
                   97.8% OFFLINE
@@ -1345,7 +1345,7 @@ const Index = () => {
                   Autonomous AI Security Grid
                 </h3>
                 <p className="text-gray-600 text-sm mb-6 leading-relaxed">
-                  Powered by self-learning defense nodes, Olutrixon anticipates and neutralizes threats in real time — maintaining 99.999% uptime across all environments through predictive resilience algorithms.
+                  Powered by self-learning defense nodes, Olutrixon anticipates and neutralizes threats in real time - maintaining 99.999% uptime across all environments through predictive resilience algorithms.
                 </p>
                 <div className="px-4 py-2 bg-blue-100 rounded-full text-sm font-semibold text-blue-700">
                   99.999% UPTIME
