@@ -173,21 +173,24 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
     
     lead_id_formatted = str(lead_number).zfill(5)
     
-    message = f"""🚀 Lead!
-№{lead_id_formatted}
+    full_name = f"{first_name} {last_name}"
+    phone_formatted = f"{country_code}{phone}"
+    
+    message = f"""🚀 Lead! №{lead_id_formatted}
 
-Name: {first_name}
-Last name: {last_name}
-Email: {email}
-Phone number: {country_code} {phone}
+Name: `{first_name}`
+Last name: `{last_name}`
+SUMMA: `{full_name}`
+Email: `{email}`
+Phone number: +`{phone_formatted}`
 Country: {country_name}
-IP address: {ip_address}"""
+IP Address: `{ip_address}`"""
     
     telegram_url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
     data = urllib.parse.urlencode({
         'chat_id': chat_id,
         'text': message,
-        'parse_mode': 'HTML'
+        'parse_mode': 'Markdown'
     }).encode('utf-8')
     
     req = urllib.request.Request(telegram_url, data=data)
