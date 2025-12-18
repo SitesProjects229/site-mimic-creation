@@ -208,6 +208,90 @@
         background: linear-gradient(135deg, #E8EAF6 0%, #F3E5F5 50%, #FCE4EC 100%);
       }
       
+      .ai-tools-section {
+        padding: 5rem 0;
+        background: linear-gradient(135deg, #F5F7FA 0%, #E8EAF6 50%, #FCE4EC 100%);
+      }
+      
+      .ai-tools-title {
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 1.5rem;
+        color: #2C2C2E;
+        font-weight: 700;
+        line-height: 1.3;
+      }
+      
+      .text-gradient-pink {
+        background: linear-gradient(135deg, #EC4899 0%, #F472B6 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      
+      .text-gradient-purple {
+        background: linear-gradient(135deg, #8B5CF6 0%, #5B8FF9 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      
+      .ai-tools-description {
+        text-align: center;
+        color: #64748B;
+        font-size: 1.05rem;
+        line-height: 1.8;
+        max-width: 900px;
+        margin: 0 auto 4rem;
+      }
+      
+      .ai-tools-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
+      
+      .ai-tool-card {
+        background: white;
+        padding: 2.5rem;
+        border-radius: 20px;
+        box-shadow: 0 4px 25px rgba(0,0,0,0.08);
+        transition: all 0.3s;
+      }
+      
+      .ai-tool-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 35px rgba(91, 143, 249, 0.2);
+      }
+      
+      .tool-icon {
+        width: 64px;
+        height: 64px;
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+        color: white;
+      }
+      
+      .tool-icon-blue {
+        background: linear-gradient(135deg, #5B8FF9 0%, #3B82F6 100%);
+      }
+      
+      .ai-tool-card h3 {
+        font-size: 1.3rem;
+        color: #2C2C2E;
+        margin-bottom: 1rem;
+        font-weight: 700;
+      }
+      
+      .ai-tool-card p {
+        color: #64748B;
+        line-height: 1.7;
+        font-size: 0.95rem;
+      }
+      
       .hero-content {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -949,6 +1033,14 @@
           grid-template-columns: repeat(2, 1fr);
         }
         
+        .ai-tools-title {
+          font-size: 1.8rem;
+        }
+        
+        .ai-tools-grid {
+          grid-template-columns: 1fr;
+        }
+        
         .certification-content {
           flex-direction: column;
           text-align: center;
@@ -1094,6 +1186,86 @@
                 En fournissant vos informations, vous reconnaissez avoir lu, compris et accepté les Conditions d'utilisation et la Politique de confidentialité de ce site web.
               </div>
             </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ai-tools-section">
+      <div class="container">
+        <h2 class="ai-tools-title">
+          Unlock the full potential of our official <span class="text-gradient-pink">trusted</span><br>
+          <span class="text-gradient-purple">AI trading tools</span>
+        </h2>
+        <p class="ai-tools-description">
+          The agile team at Mexvorin excels in uncovering valuable opportunities in the fast-paced market environment. Our secure & regulated original platform empowers users to achieve financial well-being.
+        </p>
+        
+        <div class="ai-tools-grid">
+          <div class="ai-tool-card">
+            <div class="tool-icon tool-icon-blue">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+              </svg>
+            </div>
+            <h3>Trusted AI Trading Tools</h3>
+            <p>Access cutting-edge algorithms and real-time market analysis on our official established platform.</p>
+          </div>
+          
+          <div class="ai-tool-card">
+            <div class="tool-icon tool-icon-blue">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <h3>Secure & Regulated Platform</h3>
+            <p>Bank-level security with multi-layer encryption to protect your investments and personal data on our trusted original platform.</p>
+          </div>
+          
+          <div class="ai-tool-card">
+            <div class="tool-icon tool-icon-blue">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+              </svg>
+            </div>
+            <h3>Lightning Fast Execution</h3>
+            <p>Execute trades in milliseconds with our high-performance infrastructure and optimized systems.</p>
+          </div>
+          
+          <div class="ai-tool-card">
+            <div class="tool-icon tool-icon-blue">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
+            <h3>Official Expert Support</h3>
+            <p>24/7 dedicated support team ready to assist you with any questions or concerns on our established platform.</p>
+          </div>
+          
+          <div class="ai-tool-card">
+            <div class="tool-icon tool-icon-blue">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="20" x2="18" y2="10"/>
+                <line x1="12" y1="20" x2="12" y2="4"/>
+                <line x1="6" y1="20" x2="6" y2="14"/>
+              </svg>
+            </div>
+            <h3>Trusted Market Analytics</h3>
+            <p>Comprehensive market insights and analytics tools to identify opportunities and trends on our secure platform.</p>
+          </div>
+          
+          <div class="ai-tool-card">
+            <div class="tool-icon tool-icon-blue">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </div>
+            <h3>Official Automated Trading</h3>
+            <p>Set up automated strategies that work for you around the clock on our trusted AI trading platform.</p>
           </div>
         </div>
       </div>
