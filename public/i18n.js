@@ -45,31 +45,43 @@ class I18n {
 
   async detectLanguageByIP() {
     try {
-      const response = await fetch('https://ipapi.co/json/');
-      const data = await response.json();
-      const countryCode = data.country_code;
+      const response = await fetch('https://cloudflare.com/cdn-cgi/trace');
+      const text = await response.text();
+      const lines = text.split('\n');
+      const locLine = lines.find(line => line.startsWith('loc='));
+      const countryCode = locLine ? locLine.split('=')[1] : null;
+      
       if (countryCode && this.ipLanguageMap[countryCode]) {
         this.currentLang = this.ipLanguageMap[countryCode];
+        console.log('Language detected by IP:', countryCode, '->', this.currentLang);
       } else {
         const browserLang = navigator.language.split('-')[0];
         if (this.supportedLanguages[browserLang]) {
           this.currentLang = browserLang;
+          console.log('Language detected by browser:', browserLang);
         }
       }
     } catch (error) {
+      console.error('IP detection failed:', error);
       const browserLang = navigator.language.split('-')[0];
       if (this.supportedLanguages[browserLang]) {
         this.currentLang = browserLang;
+        console.log('Fallback to browser language:', browserLang);
       }
     }
   }
 
   async loadTranslations(lang) {
     try {
+      console.log('Loading translations for:', lang);
       const response = await fetch(`/i18n/${lang}.json`);
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
       this.translations = await response.json();
+      console.log('Translations loaded successfully for:', lang);
     } catch (error) {
+      console.error('Failed to load translations for', lang, error);
       if (lang !== 'en') {
+        console.log('Falling back to English');
         const response = await fetch('/i18n/en.json');
         this.translations = await response.json();
       }
@@ -78,7 +90,11 @@ class I18n {
 
   applyTranslations() {
     const t = this.translations;
-    if (!t) return;
+    console.log('Applying translations. Current lang:', this.currentLang, 'Translations loaded:', !!t);
+    if (!t) {
+      console.error('No translations loaded!');
+      return;
+    }
     
     // Meta tags
     if (t.meta) {
