@@ -654,7 +654,6 @@
         gap: 1rem;
         margin-bottom: 1.5rem;
         align-items: flex-start;
-        position: relative;
       }
       
       .trader-avatar {
@@ -663,6 +662,7 @@
         border-radius: 50%;
         object-fit: cover;
         border: 3px solid #E8EAF6;
+        flex-shrink: 0;
       }
       
       .trader-info {
@@ -690,6 +690,7 @@
         border-radius: 50%;
         font-size: 0.75rem;
         font-weight: 700;
+        flex-shrink: 0;
       }
       
       .trader-location {
@@ -701,14 +702,13 @@
       .trader-date {
         font-size: 0.85rem;
         color: #94A3B8;
+        margin-bottom: 0.5rem;
       }
       
       .trader-stars {
         color: #FFA500;
         font-size: 1.1rem;
-        position: absolute;
-        top: 0;
-        right: 0;
+        margin-top: 0.25rem;
       }
       
       .trader-review {
@@ -2161,8 +2161,8 @@
                 <h3 class="trader-name">James Anderson <span class="verified-badge">✓</span></h3>
                 <p class="trader-location">London, United Kingdom</p>
                 <p class="trader-date">Dec 15, 2025</p>
+                <div class="trader-stars">★★★★★</div>
               </div>
-              <div class="trader-stars">★★★★★</div>
             </div>
             <p class="trader-review">Mexvorin finally gave automation the control it was missing. Execution feels seamless, and the AI reacts faster than any manual setup I've ever used.</p>
             <div class="trader-earnings">
@@ -2186,8 +2186,8 @@
                 <h3 class="trader-name">Sophie Martin <span class="verified-badge">✓</span></h3>
                 <p class="trader-location">Paris, France</p>
                 <p class="trader-date">Dec 12, 2025</p>
+                <div class="trader-stars">★★★★☆</div>
               </div>
-              <div class="trader-stars">★★★★☆</div>
             </div>
             <p class="trader-review">Precision and prediction - that's what Mexvorin delivers. Its algorithms catch shifts before the charts even reflect them.</p>
             <div class="trader-earnings">
@@ -2211,8 +2211,8 @@
                 <h3 class="trader-name">Erik Johansson <span class="verified-badge">✓</span></h3>
                 <p class="trader-location">Stockholm, Sweden</p>
                 <p class="trader-date">Dec 10, 2025</p>
+                <div class="trader-stars">★★★★☆</div>
               </div>
-              <div class="trader-stars">★★★★☆</div>
             </div>
             <p class="trader-review">Smooth interface, near-zero delay, and intelligence that grows with me. Mexvorin understands both the data and the trader behind it.</p>
             <div class="trader-earnings">
@@ -2236,8 +2236,8 @@
                 <h3 class="trader-name">Isabella Romano <span class="verified-badge">✓</span></h3>
                 <p class="trader-location">Rome, Italy</p>
                 <p class="trader-date">Dec 8, 2025</p>
+                <div class="trader-stars">★★★★★</div>
               </div>
-              <div class="trader-stars">★★★★★</div>
             </div>
             <p class="trader-review">The automation feels effortless, and the results speak for themselves. Mexvorin helped me stabilize my portfolio week after week.</p>
             <div class="trader-earnings">
@@ -2261,8 +2261,8 @@
                 <h3 class="trader-name">Lucas Schmidt <span class="verified-badge">✓</span></h3>
                 <p class="trader-location">Berlin, Germany</p>
                 <p class="trader-date">Dec 5, 2025</p>
+                <div class="trader-stars">★★★★★</div>
               </div>
-              <div class="trader-stars">★★★★★</div>
             </div>
             <p class="trader-review">Professional design, instant execution, and accuracy that feels surgical. Mexvorin is built for traders who demand reliability.</p>
             <div class="trader-earnings">
@@ -2286,8 +2286,8 @@
                 <h3 class="trader-name">Alessandro Rossi <span class="verified-badge">✓</span></h3>
                 <p class="trader-location">Milan, Italy</p>
                 <p class="trader-date">Dec 3, 2025</p>
+                <div class="trader-stars">★★★★☆</div>
               </div>
-              <div class="trader-stars">★★★★☆</div>
             </div>
             <p class="trader-review">Finally, a platform that merges data transparency with real performance. Mexvorin delivers measurable consistency and absolute trust.</p>
             <div class="trader-earnings">
