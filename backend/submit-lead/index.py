@@ -42,6 +42,7 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
     headers = event.get('headers', {})
     
     print(f"Received form data: {json.dumps(body_data, ensure_ascii=False)}")
+    print(f"Headers: cf-connecting-ip={headers.get('cf-connecting-ip')}, x-forwarded-for={headers.get('x-forwarded-for')}, x-real-ip={headers.get('x-real-ip')}")
     
     first_name = body_data.get('firstName', '')
     last_name = body_data.get('lastName', '')
