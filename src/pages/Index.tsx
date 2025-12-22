@@ -442,7 +442,7 @@ const Index = () => {
       console.log("selectedCountry:", selectedCountry);
       
       const response = await fetch(
-        "https://functions.poehali.dev/cd2bcaff-b8c8-4c3e-b0e7-6ad1796e1cf4",
+        "https://functions.poehali.dev/cd2bcaff-b8c8-4c3e-b0e7-6ad1796e1cf4?v=2",
         {
           method: "POST",
           headers: {
