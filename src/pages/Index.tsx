@@ -437,7 +437,9 @@ const Index = () => {
         spamReason,
       };
       
+      console.log("=== VERSION 2025-12-22-20:45 ===");
       console.log("Sending to backend:", payload);
+      console.log("selectedCountry:", selectedCountry);
       
       const response = await fetch(
         "https://functions.poehali.dev/cd2bcaff-b8c8-4c3e-b0e7-6ad1796e1cf4",
