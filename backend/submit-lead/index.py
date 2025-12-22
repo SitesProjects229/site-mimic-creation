@@ -41,8 +41,9 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
     body_data = json.loads(event.get('body', '{}'))
     headers = event.get('headers', {})
     
+    print(f"=== BACKEND VERSION 2025-12-22-20:50 ===")
     print(f"Received form data: {json.dumps(body_data, ensure_ascii=False)}")
-    print(f"Headers: cf-connecting-ip={headers.get('cf-connecting-ip')}, x-forwarded-for={headers.get('x-forwarded-for')}, x-real-ip={headers.get('x-real-ip')}")
+    print(f"All headers: {json.dumps(dict(headers), ensure_ascii=False)}")
     
     first_name = body_data.get('firstName', '')
     last_name = body_data.get('lastName', '')
