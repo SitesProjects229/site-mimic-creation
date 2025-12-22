@@ -2156,8 +2156,46 @@ const Index = () => {
                   </span>
                 </div>
               </AccordionTrigger>
-              <AccordionContent className="pl-16 pr-4 pb-4 text-gray-600 leading-relaxed">
-                {t.faq.a3}
+              <AccordionContent className="pl-16 pr-4 pb-4">
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-20 h-20 flex-shrink-0">
+                      <img
+                        src="https://cdn.poehali.dev/files/204f6091-1497-458b-9605-6b56e10eecb0.png"
+                        alt="ISO 27001 Badge"
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    <div className="text-gray-600 leading-relaxed">
+                      <p className="mb-3">
+                        Mexvorin operates under strict financial regulations and maintains the highest security standards. Your investments are protected by industry-leading encryption and compliance protocols.
+                      </p>
+                      <p>
+                        We follow data protection practices and respect user privacy rights. Our approach includes encryption, access controls, and regular security reviews.
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div className="mt-6 bg-white p-6 rounded-xl border-2 border-gray-100">
+                    <img
+                      src="https://cdn.poehali.dev/files/photo_2025-12-22_21-50-25.jpg"
+                      alt="ISO 27001:2005 Certificate - Haltrovex"
+                      className="w-full max-w-2xl mx-auto rounded-lg shadow-lg"
+                    />
+                  </div>
+                  
+                  <div className="mt-4 p-4 bg-blue-50 rounded-lg border border-blue-100">
+                    <div className="flex items-start gap-3">
+                      <Icon name="ShieldCheck" size={20} className="text-blue-600 flex-shrink-0 mt-1" />
+                      <div className="text-sm text-gray-700">
+                        <p className="font-semibold mb-1">Data Protection and Privacy Policy</p>
+                        <p className="text-gray-600">
+                          This certificate is valid for 3 years and is subject to satisfactory assessments of the management system as per the standard. Regular audits ensure continuous compliance and security standards.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </AccordionContent>
             </AccordionItem>
 
