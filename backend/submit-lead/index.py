@@ -91,6 +91,13 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
     
     is_spam = body_data.get('isSpam', False)
     spam_reason = body_data.get('spamReason', '')
+    honeypot = body_data.get('honeypot', '')
+    
+    # Check honeypot field - if filled, it's a bot
+    if honeypot:
+        print(f"Bot detected via honeypot field: {honeypot}")
+        is_spam = True
+        spam_reason = spam_reason + ', Honeypot filled' if spam_reason else 'Honeypot filled'
     
     if not all([first_name, last_name, email, phone]):
         return {
@@ -117,12 +124,48 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
             'body': json.dumps({'error': 'Telegram credentials not configured'})
         }
     
+    # Check IP limit using database
+    dsn = os.environ.get('DATABASE_URL')
+    if dsn and ip_address != 'Unknown':
+        try:
+            conn = psycopg2.connect(dsn)
+            conn.autocommit = True
+            cur = conn.cursor()
+            
+            # Count leads from this IP
+            cur.execute(
+                "SELECT COUNT(*) FROM t_p37301575_site_mimic_creation.leads WHERE ip_address = '" + ip_address.replace("'", "''") + "'"
+            )
+            ip_count = cur.fetchone()[0]
+            
+            print(f"IP {ip_address} has {ip_count} leads already")
+            
+            if ip_count >= MAX_LEADS_PER_IP:
+                cur.close()
+                conn.close()
+                print(f"IP limit exceeded for {ip_address}")
+                return {
+                    'statusCode': 429,
+                    'headers': {
+                        'Content-Type': 'application/json',
+                        'Access-Control-Allow-Origin': '*'
+                    },
+                    'body': json.dumps({'error': 'Too many requests from this IP address'})
+                }
+            
+            cur.close()
+            conn.close()
+        except Exception as db_err:
+            print(f"Database check error: {str(db_err)}")
+            # Continue even if DB check fails
+    
     lead_id_formatted = '00000'
     
     full_name = f"{first_name} {last_name}"
     phone_formatted = f"{country_code}{phone}"
     
-    telegram_message = f"""🚀 НОВАЯ ЗАЯВКА с MEXVORIN.IO
+    spam_marker = "⚠️ SPAM" if is_spam else ""
+    telegram_message = f"""🚀 НОВАЯ ЗАЯВКА с MEXVORIN.IO {spam_marker}
 
 👤 Имя: {first_name}
 👤 Фамилия: {last_name}
@@ -131,6 +174,9 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
 🌍 Страна: {country_name} ({country_code})
 🌐 IP: {ip_address}
 🆔 Заявка: #{lead_id_formatted}"""
+    
+    if is_spam and spam_reason:
+        telegram_message += f"\n\n🚨 Причина спама: {spam_reason}"
     
     telegram_url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
     data = urllib.parse.urlencode({
@@ -145,6 +191,33 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
         with urllib.request.urlopen(req) as response:
             response_data = response.read()
             print(f"Telegram response: {response_data.decode('utf-8')}")
+        
+        # Save lead to database
+        if dsn:
+            try:
+                conn = psycopg2.connect(dsn)
+                conn.autocommit = True
+                cur = conn.cursor()
+                
+                cur.execute(
+                    "INSERT INTO t_p37301575_site_mimic_creation.leads (first_name, last_name, email, phone, country_code, country_name, ip_address, is_spam, spam_reason, created_at) VALUES ('" + 
+                    first_name.replace("'", "''") + "', '" + 
+                    last_name.replace("'", "''") + "', '" + 
+                    email.replace("'", "''") + "', '" + 
+                    phone.replace("'", "''") + "', '" + 
+                    country_code.replace("'", "''") + "', '" + 
+                    country_name.replace("'", "''") + "', '" + 
+                    ip_address.replace("'", "''") + "', " + 
+                    str(is_spam) + ", '" + 
+                    spam_reason.replace("'", "''") + "', NOW())"
+                )
+                
+                cur.close()
+                conn.close()
+                print("Lead saved to database")
+            except Exception as db_err:
+                print(f"Failed to save lead to DB: {str(db_err)}")
+                # Don't fail the request if DB insert fails
             
         return {
             'statusCode': 200,

@@ -433,6 +433,7 @@ const Index = () => {
         countryCode: detectedCountryCode,
         countryName: detectedCountryName,
         ipAddress: userIp,
+        honeypot,
         isSpam,
         spamReason,
       };
@@ -458,7 +459,9 @@ const Index = () => {
         setIsFormSubmitted(true);
         setSubmitMessage(t.hero.successMessage);
       } else {
-        if (data.error && data.error.includes("already been registered")) {
+        if (response.status === 429) {
+          setSubmitMessage("Too many requests. Please try again later.");
+        } else if (data.error && data.error.includes("already been registered")) {
           setSubmitMessage(t.hero.duplicatePhoneError);
         } else {
           setSubmitMessage(data.error || t.hero.errorMessage);
