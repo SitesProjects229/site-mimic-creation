@@ -52,32 +52,42 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
     experience = body_data.get('experience', 'Not specified')
     message = body_data.get('message', '')
     
-    # Get IP from headers
+    # Get IP from headers (case-sensitive!)
     ip_address = (
-        headers.get('ddg-connecting-ip') or
-        headers.get('x-real-ip') or 
-        headers.get('cf-connecting-ip') or 
-        headers.get('x-forwarded-for', '').split(',')[0].strip() or
+        headers.get('Ddg-Connecting-Ip') or
+        headers.get('X-Real-Ip') or 
+        headers.get('Cf-Connecting-Ip') or 
+        headers.get('X-Forwarded-For', '').split(',')[0].strip() or
         'Unknown'
     )
     
     # Get country from Accept-Language header as fallback
-    accept_language = headers.get('accept-language', '')
+    accept_language = headers.get('Accept-Language', '')
     country_code = body_data.get('countryCode', '')
     country_name = body_data.get('countryName', '')
     
-    # If no country from body, try to extract from accept-language (th-TH -> TH)
+    # If no country from body, try to extract from accept-language
     if not country_code and accept_language:
-        parts = accept_language.split(',')[0].split('-')
+        # Handle both "ru" and "ru-RU" formats
+        lang_part = accept_language.split(',')[0].strip()
+        parts = lang_part.split('-')
+        
         if len(parts) == 2:
+            # Format: "th-TH" -> country code is "TH"
             country_code = parts[1].upper()
-            # Map common codes to names
-            country_map = {
-                'TH': 'Thailand', 'RU': 'Russia', 'US': 'United States',
-                'GB': 'United Kingdom', 'DE': 'Germany', 'FR': 'France',
-                'IT': 'Italy', 'ES': 'Spain', 'JP': 'Japan', 'CN': 'China'
-            }
-            country_name = country_map.get(country_code, country_code)
+        elif len(parts) == 1:
+            # Format: "ru" -> use as country code
+            country_code = parts[0].upper()
+        
+        # Map language/country codes to full names
+        country_map = {
+            'TH': 'Thailand', 'RU': 'Russia', 'US': 'United States',
+            'GB': 'United Kingdom', 'EN': 'United States', 'DE': 'Germany', 
+            'FR': 'France', 'IT': 'Italy', 'ES': 'Spain', 'JP': 'Japan', 
+            'CN': 'China', 'KR': 'South Korea', 'BR': 'Brazil', 'MX': 'Mexico',
+            'AR': 'Argentina', 'IN': 'India', 'AU': 'Australia', 'CA': 'Canada'
+        }
+        country_name = country_map.get(country_code, country_code)
     
     is_spam = body_data.get('isSpam', False)
     spam_reason = body_data.get('spamReason', '')
