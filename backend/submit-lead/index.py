@@ -51,16 +51,33 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
     phone = body_data.get('phone', '')
     experience = body_data.get('experience', 'Not specified')
     message = body_data.get('message', '')
-    country_code = body_data.get('countryCode', '')
-    country_name = body_data.get('countryName', 'Not specified')
     
-    # Get IP from headers (Cloudflare/Yandex Cloud provides this)
+    # Get IP from headers
     ip_address = (
+        headers.get('ddg-connecting-ip') or
+        headers.get('x-real-ip') or 
         headers.get('cf-connecting-ip') or 
         headers.get('x-forwarded-for', '').split(',')[0].strip() or
-        headers.get('x-real-ip') or
-        body_data.get('ipAddress', 'Unknown')
+        'Unknown'
     )
+    
+    # Get country from Accept-Language header as fallback
+    accept_language = headers.get('accept-language', '')
+    country_code = body_data.get('countryCode', '')
+    country_name = body_data.get('countryName', '')
+    
+    # If no country from body, try to extract from accept-language (th-TH -> TH)
+    if not country_code and accept_language:
+        parts = accept_language.split(',')[0].split('-')
+        if len(parts) == 2:
+            country_code = parts[1].upper()
+            # Map common codes to names
+            country_map = {
+                'TH': 'Thailand', 'RU': 'Russia', 'US': 'United States',
+                'GB': 'United Kingdom', 'DE': 'Germany', 'FR': 'France',
+                'IT': 'Italy', 'ES': 'Spain', 'JP': 'Japan', 'CN': 'China'
+            }
+            country_name = country_map.get(country_code, country_code)
     
     is_spam = body_data.get('isSpam', False)
     spam_reason = body_data.get('spamReason', '')
