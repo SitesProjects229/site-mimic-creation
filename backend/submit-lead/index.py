@@ -167,12 +167,12 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
     spam_marker = "⚠️ SPAM" if is_spam else ""
     telegram_message = f"""LEAD🚀 {spam_marker}
 
-👤 Имя: {first_name}
-👤 Фамилия: {last_name}
-📧 Email: {email}
-📱 Телефон: +{phone_formatted}
+👤 Имя: `{first_name}`
+👤 Фамилия: `{last_name}`
+📧 Email: `{email}`
+📱 Телефон: +`{phone_formatted}`
 🌍 Страна: {country_name} ({country_code})
-🌐 IP: {ip_address}
+🌐 IP: `{ip_address}`
 🌐 Platform: {platform}"""
     
     if is_spam and spam_reason:
