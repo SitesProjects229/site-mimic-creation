@@ -1,5 +1,5 @@
-# Eryxavin Official - robots.txt
-# https://eryxavin.eu
+# Trasvilox Official - robots.txt
+# https://trasvilox.eu
 
 User-agent: Googlebot
 Allow: /
@@ -47,7 +47,7 @@ Allow: /
 Crawl-delay: 2
 
 # Sitemaps
-Sitemap: https://eryxavin.eu/sitemap.xml
+Sitemap: https://trasvilox.eu/sitemap.xml
 
 # Disallow admin/private areas (if any)
 Disallow: /api/
