@@ -119,11 +119,11 @@
       :root {
         --primary: #7C3AED;
         --secondary: #0EA5E9;
-        --background: #0A0E27;
-        --card-bg: rgba(255, 255, 255, 0.05);
-        --text-primary: #F1F5F9;
+        --background: #0B0F1A;
+        --card-bg: rgba(255, 255, 255, 0.03);
+        --text-primary: #E2E8F0;
         --text-muted: #94A3B8;
-        --border: rgba(148, 163, 184, 0.1);
+        --border: rgba(148, 163, 184, 0.08);
         --accent: #8B5CF6;
         --success: #10B981;
         --warning: #F59E0B;
@@ -134,9 +134,14 @@
       
       body {
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-        background: linear-gradient(135deg, #0A0E27 0%, #1E1B4B 25%, #312E81 50%, #1E3A8A 75%, #0C4A6E 100%);
-        background-size: 400% 400%;
-        animation: gradientShift 15s ease infinite;
+        background: #0B0F1A;
+        background-image: 
+          radial-gradient(ellipse at top left, rgba(30, 27, 75, 0.3) 0%, transparent 50%),
+          radial-gradient(ellipse at top right, rgba(15, 23, 42, 0.4) 0%, transparent 50%),
+          radial-gradient(ellipse at bottom left, rgba(49, 46, 129, 0.2) 0%, transparent 50%),
+          radial-gradient(ellipse at bottom right, rgba(6, 78, 110, 0.15) 0%, transparent 50%),
+          radial-gradient(circle at 50% 50%, rgba(88, 28, 135, 0.08) 0%, transparent 60%);
+        background-attachment: fixed;
         color: var(--text-primary);
         line-height: 1.6;
         position: relative;
@@ -146,13 +151,13 @@
       body::before {
         content: '';
         position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: radial-gradient(ellipse at 20% 30%, rgba(124, 58, 237, 0.15) 0%, transparent 50%),
-                    radial-gradient(ellipse at 80% 70%, rgba(14, 165, 233, 0.15) 0%, transparent 50%),
-                    radial-gradient(ellipse at 50% 50%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: 
+          radial-gradient(circle at 20% 30%, rgba(67, 56, 202, 0.08) 0%, transparent 25%),
+          radial-gradient(circle at 80% 70%, rgba(6, 182, 212, 0.05) 0%, transparent 25%);
         pointer-events: none;
         z-index: 0;
       }
@@ -160,12 +165,6 @@
       body > * {
         position: relative;
         z-index: 1;
-      }
-      
-      @keyframes gradientShift {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
       }
       
       h1, h2, h3, h4, h5, h6 {
@@ -181,14 +180,14 @@
       }
       
       header {
-        background: rgba(10, 14, 39, 0.8);
+        background: rgba(11, 15, 26, 0.8);
         backdrop-filter: blur(20px);
-        box-shadow: 0 2px 20px rgba(124, 58, 237, 0.15);
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
         padding: 1rem 0;
         position: sticky;
         top: 0;
         z-index: 1000;
-        border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+        border-bottom: 1px solid rgba(139, 92, 246, 0.1);
       }
       
       nav {
@@ -298,11 +297,11 @@
         position: absolute;
         top: calc(100% + 10px);
         right: 0;
-        background: rgba(10, 14, 39, 0.95);
+        background: rgba(11, 15, 26, 0.95);
         backdrop-filter: blur(20px);
         border-radius: 12px;
-        box-shadow: 0 8px 30px rgba(139, 92, 246, 0.3);
-        border: 1px solid rgba(139, 92, 246, 0.3);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+        border: 1px solid rgba(139, 92, 246, 0.15);
         padding: 0.5rem;
         min-width: 200px;
         display: none;
@@ -328,11 +327,11 @@
         border-radius: 8px;
         transition: background 0.2s;
         font-size: 0.95rem;
-        color: #F1F5F9;
+        color: #E2E8F0;
       }
       
       .lang-option:hover {
-        background: rgba(139, 92, 246, 0.15);
+        background: rgba(139, 92, 246, 0.08);
       }
       
       .lang-option img {
@@ -443,20 +442,20 @@
       }
       
       .ai-tool-card {
-        background: rgba(255, 255, 255, 0.05);
+        background: rgba(255, 255, 255, 0.02);
         backdrop-filter: blur(10px);
         padding: 2.5rem;
         border-radius: 20px;
-        box-shadow: 0 4px 25px rgba(139, 92, 246, 0.15);
-        border: 1px solid rgba(139, 92, 246, 0.2);
+        box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(139, 92, 246, 0.1);
         transition: all 0.3s;
       }
       
       .ai-tool-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 8px 35px rgba(139, 92, 246, 0.3);
-        border-color: rgba(139, 92, 246, 0.4);
-        background: rgba(255, 255, 255, 0.08);
+        box-shadow: 0 8px 35px rgba(139, 92, 246, 0.15);
+        border-color: rgba(139, 92, 246, 0.2);
+        background: rgba(255, 255, 255, 0.04);
       }
       
       .tool-icon {
@@ -750,12 +749,12 @@
       }
       
       .step-circle {
-        background: rgba(255, 255, 255, 0.05);
+        background: rgba(255, 255, 255, 0.02);
         backdrop-filter: blur(10px);
         border-radius: 24px;
         padding: 4rem 2.5rem 2.5rem;
         text-align: center;
-        box-shadow: 0 10px 40px rgba(139, 92, 246, 0.2);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         border: 3px solid transparent;
         position: relative;
@@ -833,20 +832,20 @@
       }
       
       .trader-card {
-        background: rgba(255, 255, 255, 0.05);
+        background: rgba(255, 255, 255, 0.02);
         backdrop-filter: blur(10px);
         padding: 2rem;
         border-radius: 20px;
-        box-shadow: 0 4px 20px rgba(139, 92, 246, 0.15);
-        border: 1px solid rgba(139, 92, 246, 0.2);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(139, 92, 246, 0.1);
         transition: all 0.3s;
       }
       
       .trader-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 8px 30px rgba(139, 92, 246, 0.3);
-        border-color: rgba(139, 92, 246, 0.4);
-        background: rgba(255, 255, 255, 0.08);
+        box-shadow: 0 8px 30px rgba(139, 92, 246, 0.15);
+        border-color: rgba(139, 92, 246, 0.2);
+        background: rgba(255, 255, 255, 0.04);
       }
       
       .trader-header {
@@ -1053,12 +1052,12 @@
       }
       
       .countdown-box {
-        background: rgba(255, 255, 255, 0.05);
+        background: rgba(255, 255, 255, 0.02);
         backdrop-filter: blur(10px);
         padding: 2rem 2.5rem;
         border-radius: 20px;
-        box-shadow: 0 8px 30px rgba(139, 92, 246, 0.2);
-        border: 1px solid rgba(139, 92, 246, 0.3);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(139, 92, 246, 0.1);
         min-width: 140px;
       }
       
@@ -1159,13 +1158,13 @@
       }
       
       .review-card {
-        background: rgba(255, 255, 255, 0.05);
+        background: rgba(255, 255, 255, 0.02);
         backdrop-filter: blur(10px);
         padding: 1.75rem 1.5rem;
         border-radius: 16px;
         text-align: center;
-        box-shadow: 0 4px 20px rgba(139, 92, 246, 0.15);
-        border: 1px solid rgba(139, 92, 246, 0.2);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(139, 92, 246, 0.1);
         flex: 0 1 auto;
         min-width: 150px;
         transition: transform 0.3s, box-shadow 0.3s;
@@ -1173,8 +1172,8 @@
       
       .review-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 8px 30px rgba(139, 92, 246, 0.3);
-        border-color: rgba(139, 92, 246, 0.4);
+        box-shadow: 0 8px 30px rgba(139, 92, 246, 0.15);
+        border-color: rgba(139, 92, 246, 0.2);
       }
       
       .review-logo {
@@ -1206,12 +1205,12 @@
       }
       
       .hero-form-container {
-        background: rgba(255, 255, 255, 0.05);
+        background: rgba(255, 255, 255, 0.03);
         backdrop-filter: blur(20px);
         padding: 3.5rem;
         border-radius: 28px;
-        box-shadow: 0 12px 60px rgba(139, 92, 246, 0.35), 0 0 0 4px rgba(139, 92, 246, 0.15);
-        border: 4px solid transparent;
+        box-shadow: 0 12px 60px rgba(0, 0, 0, 0.4), 0 0 0 2px rgba(139, 92, 246, 0.1);
+        border: 2px solid rgba(139, 92, 246, 0.15);
         background-clip: padding-box;
         position: relative;
         transform: scale(1.08);
@@ -1273,20 +1272,20 @@
       }
       
       .stat-card {
-        background: rgba(255, 255, 255, 0.05);
+        background: rgba(255, 255, 255, 0.02);
         backdrop-filter: blur(10px);
         padding: 2rem;
         border-radius: 16px;
         text-align: center;
-        box-shadow: 0 4px 20px rgba(139, 92, 246, 0.15);
-        border: 1px solid rgba(139, 92, 246, 0.2);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(139, 92, 246, 0.1);
         transition: transform 0.3s;
       }
       
       .stat-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 8px 30px rgba(139, 92, 246, 0.3);
-        border-color: rgba(139, 92, 246, 0.4);
+        box-shadow: 0 8px 30px rgba(139, 92, 246, 0.15);
+        border-color: rgba(139, 92, 246, 0.2);
       }
       
       .stat-number {
@@ -1305,13 +1304,13 @@
       }
       
       .certification-section {
-        background: rgba(255, 255, 255, 0.05);
+        background: rgba(255, 255, 255, 0.02);
         backdrop-filter: blur(20px);
         border-radius: 24px;
         padding: 3rem;
-        box-shadow: 0 4px 30px rgba(139, 92, 246, 0.2);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
         margin: 3rem 0;
-        border: 2px solid rgba(139, 92, 246, 0.3);
+        border: 2px solid rgba(139, 92, 246, 0.1);
       }
       
       .certification-content {
@@ -1429,19 +1428,19 @@
       }
       
       .feature-card {
-        background: rgba(255, 255, 255, 0.05);
+        background: rgba(255, 255, 255, 0.02);
         backdrop-filter: blur(10px);
         padding: 2.5rem;
         border-radius: 20px;
-        box-shadow: 0 4px 25px rgba(139, 92, 246, 0.15);
+        box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
         transition: all 0.3s;
-        border: 2px solid rgba(139, 92, 246, 0.2);
+        border: 2px solid rgba(139, 92, 246, 0.1);
       }
       
       .feature-card:hover {
         transform: translateY(-5px);
-        border-color: rgba(139, 92, 246, 0.5);
-        box-shadow: 0 8px 35px rgba(139, 92, 246, 0.3);
+        border-color: rgba(139, 92, 246, 0.2);
+        box-shadow: 0 8px 35px rgba(139, 92, 246, 0.15);
       }
       
       .feature-icon {
@@ -1469,20 +1468,20 @@
       }
       
       .pricing-card {
-        background: rgba(255, 255, 255, 0.05);
+        background: rgba(255, 255, 255, 0.02);
         backdrop-filter: blur(10px);
         border-radius: 24px;
         padding: 3rem 2rem;
         text-align: center;
-        box-shadow: 0 4px 25px rgba(139, 92, 246, 0.15);
-        border: 2px solid rgba(139, 92, 246, 0.2);
+        box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+        border: 2px solid rgba(139, 92, 246, 0.1);
         transition: all 0.3s;
         position: relative;
       }
       
       .pricing-card.popular {
-        border-color: rgba(139, 92, 246, 0.5);
-        box-shadow: 0 8px 40px rgba(139, 92, 246, 0.3);
+        border-color: rgba(139, 92, 246, 0.2);
+        box-shadow: 0 8px 40px rgba(139, 92, 246, 0.15);
         transform: scale(1.05);
       }
       
@@ -1542,12 +1541,12 @@
       .contact-form {
         max-width: 700px;
         margin: 0 auto;
-        background: rgba(255, 255, 255, 0.05);
+        background: rgba(255, 255, 255, 0.02);
         backdrop-filter: blur(20px);
         padding: 3rem;
         border-radius: 24px;
-        box-shadow: 0 4px 30px rgba(139, 92, 246, 0.2);
-        border: 1px solid rgba(139, 92, 246, 0.3);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(139, 92, 246, 0.1);
       }
       
       .form-group {
@@ -1566,22 +1565,22 @@
       .form-select {
         width: 100%;
         padding: 1.15rem;
-        border: 2px solid rgba(139, 92, 246, 0.3);
+        border: 2px solid rgba(139, 92, 246, 0.15);
         border-radius: 12px;
         font-size: 1.05rem;
         font-family: 'Inter', sans-serif;
         transition: all 0.3s;
-        background: rgba(255, 255, 255, 0.05);
-        color: #F1F5F9;
+        background: rgba(255, 255, 255, 0.03);
+        color: #E2E8F0;
       }
       
       .form-input:focus,
       .form-textarea:focus,
       .form-select:focus {
         outline: none;
-        border-color: rgba(139, 92, 246, 0.6);
-        background: rgba(255, 255, 255, 0.08);
-        box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.1);
+        border-color: rgba(139, 92, 246, 0.3);
+        background: rgba(255, 255, 255, 0.05);
+        box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.05);
       }
       
       .form-input::placeholder {
@@ -1706,10 +1705,10 @@
       .country-select-button {
         width: 100%;
         padding: 1.15rem 0.75rem;
-        background: rgba(255, 255, 255, 0.05);
+        background: rgba(255, 255, 255, 0.03);
         cursor: pointer;
         font-size: 0.9rem;
-        border: 2px solid rgba(139, 92, 246, 0.3);
+        border: 2px solid rgba(139, 92, 246, 0.15);
         border-radius: 12px;
         font-family: 'Inter', sans-serif;
         transition: all 0.3s;
@@ -1717,15 +1716,15 @@
         align-items: center;
         gap: 0.5rem;
         text-align: left;
-        color: #F1F5F9;
+        color: #E2E8F0;
       }
       
       .country-select-button:hover,
       .country-select-button:focus {
         outline: none;
-        border-color: rgba(139, 92, 246, 0.6);
-        background: rgba(255, 255, 255, 0.08);
-        box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.1);
+        border-color: rgba(139, 92, 246, 0.3);
+        background: rgba(255, 255, 255, 0.05);
+        box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.05);
       }
       
       .country-flag {
@@ -1742,11 +1741,11 @@
         left: 0;
         right: 0;
         margin-top: 0.25rem;
-        background: rgba(10, 14, 39, 0.95);
+        background: rgba(11, 15, 26, 0.95);
         backdrop-filter: blur(20px);
-        border: 2px solid rgba(139, 92, 246, 0.3);
+        border: 2px solid rgba(139, 92, 246, 0.15);
         border-radius: 12px;
-        box-shadow: 0 8px 24px rgba(139, 92, 246, 0.2);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
         max-height: 300px;
         overflow-y: auto;
         z-index: 1000;
@@ -1765,15 +1764,15 @@
         cursor: pointer;
         font-size: 0.9rem;
         transition: background-color 0.2s;
-        color: #F1F5F9;
+        color: #E2E8F0;
       }
       
       .country-option:hover {
-        background-color: rgba(139, 92, 246, 0.15);
+        background-color: rgba(139, 92, 246, 0.08);
       }
       
       .country-option.selected {
-        background-color: rgba(139, 92, 246, 0.25);
+        background-color: rgba(139, 92, 246, 0.12);
       }
       
       .country-select-dropdown::-webkit-scrollbar {
@@ -1802,19 +1801,19 @@
       }
       
       .office-card {
-        background: rgba(255, 255, 255, 0.05);
+        background: rgba(255, 255, 255, 0.02);
         backdrop-filter: blur(10px);
         padding: 2rem;
         border-radius: 20px;
-        box-shadow: 0 4px 20px rgba(139, 92, 246, 0.15);
-        border: 1px solid rgba(139, 92, 246, 0.2);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(139, 92, 246, 0.1);
         transition: transform 0.3s;
       }
       
       .office-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 8px 30px rgba(139, 92, 246, 0.3);
-        border-color: rgba(139, 92, 246, 0.4);
+        box-shadow: 0 8px 30px rgba(139, 92, 246, 0.15);
+        border-color: rgba(139, 92, 246, 0.2);
       }
       
       .office-name {
@@ -1846,13 +1845,13 @@
       }
       
       .faq-item {
-        background: rgba(255, 255, 255, 0.05);
+        background: rgba(255, 255, 255, 0.02);
         backdrop-filter: blur(10px);
         margin-bottom: 1rem;
         border-radius: 16px;
         overflow: hidden;
-        box-shadow: 0 2px 15px rgba(139, 92, 246, 0.15);
-        border: 1px solid rgba(139, 92, 246, 0.2);
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(139, 92, 246, 0.1);
       }
       
       .faq-question {
@@ -1897,13 +1896,13 @@
       }
       
       .timer-box {
-        background: rgba(255, 255, 255, 0.05);
+        background: rgba(255, 255, 255, 0.02);
         backdrop-filter: blur(10px);
         padding: 1.5rem 2rem;
         border-radius: 16px;
         text-align: center;
-        box-shadow: 0 4px 20px rgba(139, 92, 246, 0.15);
-        border: 1px solid rgba(139, 92, 246, 0.2);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(139, 92, 246, 0.1);
         min-width: 100px;
       }
       
@@ -1932,19 +1931,19 @@
       }
       
       .testimonial-card {
-        background: rgba(255, 255, 255, 0.05);
+        background: rgba(255, 255, 255, 0.02);
         backdrop-filter: blur(10px);
         padding: 2rem;
         border-radius: 20px;
-        box-shadow: 0 4px 20px rgba(139, 92, 246, 0.15);
-        border: 1px solid rgba(139, 92, 246, 0.2);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(139, 92, 246, 0.1);
         transition: transform 0.3s;
       }
       
       .testimonial-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 8px 30px rgba(139, 92, 246, 0.3);
-        border-color: rgba(139, 92, 246, 0.4);
+        box-shadow: 0 8px 30px rgba(139, 92, 246, 0.15);
+        border-color: rgba(139, 92, 246, 0.2);
       }
       
       .testimonial-text {
@@ -1985,12 +1984,12 @@
       }
       
       footer {
-        background: rgba(10, 14, 39, 0.8);
+        background: rgba(11, 15, 26, 0.8);
         backdrop-filter: blur(20px);
         color: white;
         padding: 4rem 0 2rem;
         margin-top: 5rem;
-        border-top: 1px solid rgba(139, 92, 246, 0.2);
+        border-top: 1px solid rgba(139, 92, 246, 0.1);
       }
       
       .footer-content {
