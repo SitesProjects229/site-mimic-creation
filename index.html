@@ -1158,13 +1158,13 @@
       }
       
       .review-card {
-        background: rgba(255, 255, 255, 0.02);
+        background: rgba(255, 255, 255, 0.06);
         backdrop-filter: blur(10px);
         padding: 1.75rem 1.5rem;
         border-radius: 16px;
         text-align: center;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-        border: 1px solid rgba(139, 92, 246, 0.1);
+        border: 1px solid rgba(139, 92, 246, 0.15);
         flex: 0 1 auto;
         min-width: 150px;
         transition: transform 0.3s, box-shadow 0.3s;
@@ -1172,8 +1172,9 @@
       
       .review-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 8px 30px rgba(139, 92, 246, 0.15);
-        border-color: rgba(139, 92, 246, 0.2);
+        box-shadow: 0 8px 30px rgba(139, 92, 246, 0.2);
+        border-color: rgba(139, 92, 246, 0.3);
+        background: rgba(255, 255, 255, 0.08);
       }
       
       .review-logo {
@@ -1186,22 +1187,25 @@
       }
       
       .review-name {
-        font-size: 0.95rem;
-        font-weight: 600;
-        color: #F1F5F9;
+        font-size: 1rem;
+        font-weight: 700;
+        color: #FFFFFF;
         margin-bottom: 0.75rem;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
       }
       
       .review-stars {
         color: #FFA500;
         margin-bottom: 0.5rem;
         font-size: 1.2rem;
+        filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
       }
       
       .review-rating {
         font-weight: 700;
         font-size: 1.4rem;
-        color: #F1F5F9;
+        color: #FFFFFF;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
       }
       
       .hero-form-container {
