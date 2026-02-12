@@ -1179,11 +1179,11 @@
       .earnings-calculator {
         background: rgba(36, 226, 240, 0.06);
         backdrop-filter: blur(15px);
-        padding: 1.5rem 2rem 4rem;
+        padding: 1.5rem 2rem 1.25rem;
         border-radius: 20px;
         border: 2px solid rgba(36, 226, 240, 0.2);
         box-shadow: 0 8px 32px rgba(36, 226, 240, 0.15);
-        margin-bottom: 2rem;
+        margin-bottom: 0;
       }
       
       .calculator-title {
@@ -1313,7 +1313,13 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 3.5rem;
-        align-items: start;
+        align-items: stretch;
+      }
+      
+      .hero-left {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
       }
       
       .hero-left h1 {
