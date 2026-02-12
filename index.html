@@ -1277,7 +1277,7 @@
       .earnings-calculator {
         background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(139, 92, 246, 0.12) 100%);
         backdrop-filter: blur(20px);
-        padding: 1.5rem 2rem 1.25rem;
+        padding: 1.8rem 3rem 1.5rem;
         border-radius: 24px;
         border: 3px solid rgba(59, 130, 246, 0.4);
         box-shadow: 
@@ -1288,6 +1288,9 @@
         position: relative;
         transform: scale(1.02);
         animation: calculatorPulse 3s ease-in-out infinite;
+        width: 100%;
+        min-height: 380px;
+        box-sizing: border-box;
       }
       
       @keyframes calculatorPulse {
@@ -1403,51 +1406,62 @@
       
       .calculator-result {
         background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(52, 211, 153, 0.05) 100%);
-        padding: 1rem 1.5rem;
+        padding: 1.5rem 2rem;
         border-radius: 16px;
         border: 2px solid rgba(16, 185, 129, 0.3);
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
         gap: 2rem;
         box-shadow: 0 4px 20px rgba(16, 185, 129, 0.15);
+        min-height: 140px;
       }
       
       .result-days, .result-earnings {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
+        text-align: center;
         flex: 1;
+        min-width: 200px;
       }
       
       .result-label {
-        font-size: 0.85rem;
+        display: block;
+        font-size: 1rem;
         color: #E2E8F0;
+        margin-bottom: 0.75rem;
         font-weight: 600;
         text-transform: uppercase;
         letter-spacing: 0.5px;
-        white-space: nowrap;
       }
       
       .result-value {
-        font-size: 2rem;
+        font-size: 2.5rem;
         font-weight: 800;
         background: linear-gradient(135deg, #10B981 0%, #34D399 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
+        display: inline-block;
+        min-width: 100px;
+        text-align: center;
+        font-variant-numeric: tabular-nums;
+        font-feature-settings: "tnum";
       }
       
       .result-amount {
-        font-size: 2.25rem;
+        font-size: 3rem;
         font-weight: 900;
         background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 50%, #EAB308 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
+        display: inline-block;
         filter: drop-shadow(0 0 30px rgba(251, 191, 36, 0.6));
         letter-spacing: -1px;
         animation: amountPulse 2s ease-in-out infinite;
+        min-width: 220px;
+        text-align: center;
+        font-variant-numeric: tabular-nums;
+        font-feature-settings: "tnum";
       }
       
       @keyframes amountPulse {
@@ -1471,7 +1485,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 3.5rem;
-        align-items: stretch;
+        align-items: start;
         position: relative;
         z-index: 1;
       }
@@ -1573,7 +1587,7 @@
       .hero-form-container {
         background: rgba(255, 255, 255, 0.03);
         backdrop-filter: blur(20px);
-        padding: 1.75rem 3rem 1.5rem;
+        padding: 3rem 4rem 3rem;
         border-radius: 32px;
         box-shadow: 0 12px 60px rgba(0, 0, 0, 0.4), 0 0 0 2px rgba(139, 92, 246, 0.1);
         border: 2px solid rgba(139, 92, 246, 0.15);
@@ -1621,8 +1635,8 @@
       .form-row {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 1rem;
-        margin-bottom: 0.85rem;
+        gap: 1.5rem;
+        margin-bottom: 1rem;
       }
       
       .hero-buttons {
@@ -1936,10 +1950,10 @@
       .form-textarea,
       .form-select {
         width: 100%;
-        padding: 0.9rem 1.5rem;
+        padding: 1.3rem 2rem;
         border: 2px solid rgba(139, 92, 246, 0.15);
-        border-radius: 12px;
-        font-size: 0.95rem;
+        border-radius: 16px;
+        font-size: 1.1rem;
         font-family: 'Inter', sans-serif;
         transition: all 0.3s;
         background: rgba(255, 255, 255, 0.03);
@@ -1961,13 +1975,13 @@
       
       .btn-submit-hero {
         width: 100%;
-        padding: 1.1rem;
+        padding: 1.75rem;
         border: none;
-        border-radius: 14px;
+        border-radius: 18px;
         background: linear-gradient(135deg, #EC4899 0%, #8B5CF6 50%, #3B82F6 100%);
         color: white;
         font-weight: 700;
-        font-size: 1.1rem;
+        font-size: 1.3rem;
         cursor: pointer;
         transition: all 0.3s;
         text-transform: uppercase;
@@ -1984,22 +1998,22 @@
         display: flex;
         align-items: center;
         gap: 0.5rem;
-        margin-top: 0.75rem;
-        margin-bottom: 0.75rem;
-        padding: 0.65rem;
+        margin-top: 1.25rem;
+        margin-bottom: 1.25rem;
+        padding: 1rem;
         background: rgba(16, 185, 129, 0.1);
-        border-radius: 8px;
-        font-size: 0.8rem;
+        border-radius: 10px;
+        font-size: 0.9rem;
         color: #10B981;
         border: 1px solid rgba(16, 185, 129, 0.2);
       }
       
       .form-disclaimer {
-        font-size: 0.7rem;
+        font-size: 0.85rem;
         color: #94A3B8;
         text-align: center;
         margin-top: 0;
-        line-height: 1.4;
+        line-height: 1.6;
       }
       
       .form-success-message {
@@ -2686,11 +2700,11 @@
                 <input type="text" class="form-input" placeholder="Last Name" data-i18n-placeholder="form.lastName" id="heroLastName" required>
               </div>
               
-              <div style="margin-bottom: 0.65rem;">
+              <div style="margin-bottom: 1rem;">
                 <input type="email" class="form-input" placeholder="Email Address" data-i18n-placeholder="form.email" id="heroEmail" required>
               </div>
               
-              <div class="phone-input-group" style="margin-bottom: 0.85rem;">
+              <div class="phone-input-group" style="margin-bottom: 1.5rem;">
                 <div class="country-select-wrapper">
                   <button type="button" class="country-select-button" id="heroCountrySelectBtn">
                     <img src="https://flagcdn.com/w40/us.png" alt="US" class="country-flag" id="heroSelectedFlag">
